@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier - Mon Coin Pharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Bar -->
+    <div class="bg-green-800 text-white py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex space-x-4 text-sm">
+                <span><i class="fas fa-phone-alt mr-1"></i> +213 123 456 789</span>
+                <span><i class="fas fa-envelope mr-1"></i> contact@moncoinpharma.dz</span>
+            </div>
+            <div class="flex space-x-4">
+            <a href="admin.html" class="text-sm hover:text-green-200"><i class="fas fa-user mr-1"></i> Mon Compte</a>
+                <a href="favorites.html" class="text-sm hover:text-green-200"><i class="fas fa-heart mr-1"></i> Favoris</a>
+                <div class="flex items-center">
+                    <i class="fas fa-globe mr-1"></i>
+                    <select class="bg-green-800 text-white border-none text-sm focus:ring-0" aria-label="Sélectionner la langue">
+                        <option>Français</option>
+                        <option>العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="text-green-700 mr-4">
+                    <i class="fas fa-bars text-2xl md:hidden"></i>
+                </div>
+                <a href="index.html" class="flex items-center">
+                    <img src="assets/images/logo.png" alt="Mon Coin Pharma Logo" class="h-10 mr-2">
+                    <span class="text-2xl font-bold text-green-700">Mon Coin Pharma</span>
+                </a>
+            </div>
+
+            <div class="hidden md:flex flex-1 mx-8">
+                <div class="relative w-full">
+                    <input type="text" placeholder="Rechercher des médicaments, produits de soin..." 
+                           class="w-full py-2 px-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <button class="absolute right-0 top-0 h-full px-4 text-white bg-green-600 rounded-r-full hover:bg-green-700" title="Rechercher des produits" aria-label="Rechercher des produits">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="login.html" class="hidden md:block text-gray-700 hover:text-green-600">
+                    <i class="fas fa-user-circle text-2xl"></i>
+                </a>
+                <a href="favorites.html" class="text-gray-700 hover:text-green-600 relative">
+                    <i class="fas fa-heart text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </a>
+                <a href="cart.html" class="text-gray-700 hover:text-green-600 relative">
+                    <i class="fas fa-shopping-cart text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Content -->
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-8">Mon Panier</h1>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Cart Items -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <!-- Cart Item 1 -->
+                    <div class="flex items-center border-b border-gray-200 pb-4 mb-4">
+                        <img src="assets/images/produit1.jpg" alt="Paracétamol" class="w-24 h-24 object-cover rounded">
+                        <div class="ml-4 flex-1">
+                            <h3 class="text-lg font-semibold text-gray-900">Paracétamol 500mg</h3>
+                            <p class="text-gray-600 text-sm">Boîte de 16 comprimés</p>
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="flex items-center">
+                                    <button class="text-gray-500 hover:text-green-600" aria-label="Diminuer la quantité">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <span class="mx-4">2</span>
+                                    <button class="text-gray-500 hover:text-green-600" aria-label="Augmenter la quantité">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-green-600 font-bold mr-4">150 DA</span>
+                                    <button class="text-red-500 hover:text-red-600" aria-label="Supprimer l'article">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Item 2 -->
+                    <div class="flex items-center">
+    <img src="assets/images/produit3.jpg" alt="Vitamine C" class="w-24 h-24 object-cover rounded">
+                        <div class="ml-4 flex-1">
+                            <h3 class="text-lg font-semibold text-gray-900">Vitamine C 500mg</h3>
+                            <p class="text-gray-600 text-sm">Boîte de 30 comprimés effervescents</p>
+                            <div class="flex items-center justify-between mt-2">
+                                <div class="flex items-center">
+                                    <button class="text-gray-500 hover:text-green-600" aria-label="Diminuer la quantité">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <span class="mx-4">1</span>
+                                    <button class="text-gray-500 hover:text-green-600" aria-label="Augmenter la quantité">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-green-600 font-bold mr-4">250 DA</span>
+                                    <button class="text-red-500 hover:text-red-600" aria-label="Supprimer l'article">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Résumé de la commande</h2>
+                    <div class="space-y-4">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Sous-total</span>
+                            <span class="font-semibold">550 DA</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Livraison</span>
+                            <span class="font-semibold">Gratuite</span>
+                        </div>
+                        <div class="border-t border-gray-200 pt-4">
+                            <div class="flex justify-between">
+                                <span class="text-lg font-semibold">Total</span>
+                                <span class="text-lg font-semibold text-green-600">550 DA</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-green-600 text-white py-3 rounded-full hover:bg-green-700 transition-colors">
+                            Passer la commande
+                        </button>
+                        <div class="text-center text-sm text-gray-600">
+                            <p>Livraison gratuite pour les commandes supérieures à 1000 DA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Promo Code -->
+                <div class="bg-white rounded-lg shadow-md p-6 mt-4">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Code promo</h2>
+                    <div class="flex">
+                        <input type="text" placeholder="Entrez votre code promo" 
+                               class="flex-1 py-2 px-4 border border-gray-300 rounded-l-full focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <button class="bg-green-600 text-white px-6 rounded-r-full hover:bg-green-700">
+                            Appliquer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Mon Coin Pharma</h3>
+                    <p class="text-gray-400 mb-4">Votre pharmacie en ligne de confiance en Algérie, offrant des médicaments et produits de santé de qualité depuis 2015.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Liens rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="moncoin2.html" class="text-gray-400 hover:text-white">Accueil</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Produits</a></li>
+                        <li><a href="promotions.html" class="text-gray-400 hover:text-white">Promotions</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog Santé</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">À propos</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Catégories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Médicaments</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Soins de la Peau</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Santé & Bien-être</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Bébé & Enfant</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Premiers Secours</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Matériel Médical</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contactez-nous</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Rue de la Santé, Alger, Algérie</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-green-500 mr-3"></i>
+                            <span class="text-gray-400">+213 123 456 789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-green-500 mr-3"></i>
+                            <span class="text-gray-400">contact@moncoinpharma.dz</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-green-500 mr-3"></i>
+                            <span class="text-gray-400">Lun-Sam: 8h-20h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Mon Coin Pharma. Tous droits réservés.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Conditions générales</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</body>
+</html>

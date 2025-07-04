@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord Admin - Mon Coin Pharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .main-content {
+            margin-left: 250px;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+            }
+            .main-content {
+                margin-left: 0;
+            }
+            .mobile-hidden {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Sidebar -->
+    <div class="sidebar bg-white shadow-md z-10">
+        <div class="p-4 border-b border-gray-200">
+            <div class="flex items-center">
+                <a href="moncoin2.html" class="flex items-center">
+                    <span class="text-xl font-bold text-green-700">Mon Coin Pharma</span>
+                </a>
+            </div>
+        </div>
+        <nav class="p-4">
+            <ul class="space-y-2">
+                <li>
+                    <a href="#dashboard" class="nav-link flex items-center p-2 text-gray-700 hover:bg-green-50 rounded-lg bg-green-50 text-green-600">
+                        <i class="fas fa-tachometer-alt mr-3"></i>
+                        Tableau de bord
+                    </a>
+                </li>
+                <li>
+                    <a href="#products" class="nav-link flex items-center p-2 text-gray-700 hover:bg-green-50 rounded-lg">
+                        <i class="fas fa-box mr-3"></i>
+                        Produits
+                    </a>
+                </li>
+                <li>
+                    <a href="#categories" class="nav-link flex items-center p-2 text-gray-700 hover:bg-green-50 rounded-lg">
+                        <i class="fas fa-tags mr-3"></i>
+                        Catégories
+                    </a>
+                </li>
+                <li>
+                    <a href="#orders" class="nav-link flex items-center p-2 text-gray-700 hover:bg-green-50 rounded-lg">
+                        <i class="fas fa-shopping-cart mr-3"></i>
+                        Commandes
+                    </a>
+                </li>
+                <li>
+                    <a href="#customers" class="nav-link flex items-center p-2 text-gray-700 hover:bg-green-50 rounded-lg">
+                        <i class="fas fa-users mr-3"></i>
+                        Clients
+                    </a>
+                </li>
+                <li>
+                    <a href="#stats" class="nav-link flex items-center p-2 text-gray-700 hover:bg-green-50 rounded-lg">
+                        <i class="fas fa-chart-bar mr-3"></i>
+                        Statistiques
+                    </a>
+                </li>
+                <li>
+                    <a href="#settings" class="nav-link flex items-center p-2 text-gray-700 hover:bg-green-50 rounded-lg">
+                        <i class="fas fa-cog mr-3"></i>
+                        Paramètres
+                    </a>
+                </li>
+                <li class="mt-8">
+                    <a href="moncoin2.html" class="flex items-center p-2 text-red-600 hover:bg-red-50 rounded-lg">
+                        <i class="fas fa-sign-out-alt mr-3"></i>
+                        Déconnexion
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Top Bar -->
+        <div class="bg-white shadow-sm">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+                <div class="flex items-center">
+                    <button class="text-gray-700 mr-4 md:hidden" id="mobile-menu-btn" aria-label="Menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                    <h1 class="text-2xl font-bold text-gray-900">Tableau de bord</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <button class="text-gray-700 hover:text-green-600" aria-label="Notifications">
+                            <i class="fas fa-bell text-2xl"></i>
+                            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                        </button>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="ml-2 text-gray-700">Admin</span>
+                        <div class="relative ml-3">
+                            <button class="text-gray-700 hover:text-green-600" aria-label="Menu utilisateur" id="user-menu-button">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <!-- Dropdown menu -->
+                            <div class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1" id="user-menu">
+                                <a href="#profile" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Profil</a>
+                                <a href="#settings" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Paramètres</a>
+                                <a href="moncoin2.html" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Déconnexion</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div id="dashboard" class="admin-section container mx-auto px-4 py-8">
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center">
+                        <div class="p-3 bg-green-100 rounded-full">
+                            <i class="fas fa-shopping-cart text-green-600 text-2xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-gray-600">Commandes</p>
+                            <h3 class="text-2xl font-bold text-gray-900">156</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center">
+                        <div class="p-3 bg-blue-100 rounded-full">
+                            <i class="fas fa-users text-blue-600 text-2xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-gray-600">Clients</p>
+                            <h3 class="text-2xl font-bold text-gray-900">2,345</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center">
+                        <div class="p-3 bg-yellow-100 rounded-full">
+                            <i class="fas fa-box text-yellow-600 text-2xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-gray-600">Produits</p>
+                            <h3 class="text-2xl font-bold text-gray-900">1,234</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center">
+                        <div class="p-3 bg-red-100 rounded-full">
+                            <i class="fas fa-money-bill-wave text-red-600 text-2xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-gray-600">Revenus</p>
+                            <h3 class="text-2xl font-bold text-gray-900">156,789 DA</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Orders -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-semibold text-gray-900">Commandes récentes</h2>
+                    <a href="#orders" class="text-green-600 hover:text-green-700">Voir tout</a>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="text-left py-3 px-4 text-gray-600">ID</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Client</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Date</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Montant</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Statut</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">#12345</td>
+                                <td class="py-3 px-4">Ahmed Benali</td>
+                                <td class="py-3 px-4">21/04/2024</td>
+                                <td class="py-3 px-4">3,250 DA</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Livré</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <button class="text-blue-600 hover:text-blue-900" aria-label="Voir la commande">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">#12344</td>
+                                <td class="py-3 px-4">Fatima Zohra</td>
+                                <td class="py-3 px-4">21/04/2024</td>
+                                <td class="py-3 px-4">1,680 DA</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">En cours</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <button class="text-blue-600 hover:text-blue-900" aria-label="Voir la commande">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">#12343</td>
+                                <td class="py-3 px-4">Mohamed Boudiaf</td>
+                                <td class="py-3 px-4">20/04/2024</td>
+                                <td class="py-3 px-4">2,100 DA</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">Préparation</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <button class="text-blue-600 hover:text-blue-900" aria-label="Voir la commande">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Popular Products -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-semibold text-gray-900">Produits populaires</h2>
+                    <a href="#products" class="text-green-600 hover:text-green-700">Voir tout</a>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="text-left py-3 px-4 text-gray-600">Produit</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Catégorie</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Stock</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Prix</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Ventes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">Paracétamol 500mg</td>
+                                <td class="py-3 px-4">Médicaments</td>
+                                <td class="py-3 px-4">120</td>
+                                <td class="py-3 px-4">150 DA</td>
+                                <td class="py-3 px-4">230</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">Crème Hydratante Visage</td>
+                                <td class="py-3 px-4">Soins de la Peau</td>
+                                <td class="py-3 px-4">45</td>
+                                <td class="py-3 px-4">980 DA</td>
+                                <td class="py-3 px-4">198</td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">Vitamine C 500mg</td>
+                                <td class="py-3 px-4">Compléments</td>
+                                <td class="py-3 px-4">76</td>
+                                <td class="py-3 px-4">250 DA</td>
+                                <td class="py-3 px-4">182</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Section -->
+        <div id="products" class="admin-section container mx-auto px-4 py-8 hidden">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-gray-900">Gestion des Produits</h2>
+                <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700" id="add-product-btn">
+                    <i class="fas fa-plus mr-2"></i>Ajouter un produit
+                </button>
+            </div>
+            
+            <!-- Filters -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <div class="flex flex-col md:flex-row md:items-center justify-between space-y-4 md:space-y-0">
+                    <div class="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-4">
+                        <div>
+                            <label for="product-category-filter" class="block text-sm font-medium text-gray-700 mb-1">Catégorie</label>
+                            <select id="product-category-filter" class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" aria-label="Filtrer par catégorie">
+                                <option value="">Toutes les catégories</option>
+                                <option value="medicaments">Médicaments</option>
+                                <option value="soins">Soins de la Peau</option>
+                                <option value="sante">Santé & Bien-être</option>
+                                <option value="bebe">Bébé & Enfant</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="product-stock-filter" class="block text-sm font-medium text-gray-700 mb-1">Stock</label>
+                            <select id="product-stock-filter" class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" aria-label="Filtrer par statut du stock">
+                                <option value="">Tous</option>
+                                <option value="in-stock">En stock</option>
+                                <option value="low-stock">Stock faible</option>
+                                <option value="out-of-stock">Rupture de stock</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-64">
+                        <label for="product-search" class="block text-sm font-medium text-gray-700 mb-1">Rechercher</label>
+                        <div class="relative">
+                            <input type="text" id="product-search" class="w-full border border-gray-300 rounded-md pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Nom, référence...">
+                            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                <i class="fas fa-search text-gray-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Products Table -->
+            <div class="bg-white rounded-lg shadow-md p-6 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead>
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Produit</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Catégorie</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Prix</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stock</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Statut</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <!-- Product Row 1 -->
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-10 rounded-md flex-shrink-0 overflow-hidden">
+                                            <img src="https://via.placeholder.com/100" alt="Paracétamol" class="h-full w-full object-cover">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Paracétamol 500mg</div>
+                                            <div class="text-sm text-gray-500">Boîte de 16 comprimés</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Médicaments</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">150 DA</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">120</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                        En stock
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <div class="flex space-x-2">
+                                        <button class="text-blue-600 hover:text-blue-900" aria-label="Modifier le produit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900" aria-label="Supprimer le produit">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Product Row 2 -->
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-10 rounded-md flex-shrink-0 overflow-hidden">
+                                            <img src="https://via.placeholder.com/100" alt="Vitamine C" class="h-full w-full object-cover">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Vitamine C 500mg</div>
+                                            <div class="text-sm text-gray-500">Boîte de 30 comprimés effervescents</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Compléments</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">250 DA</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">76</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                        En stock
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <div class="flex space-x-2">
+                                        <button class="text-blue-600 hover:text-blue-900" aria-label="Modifier le produit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900" aria-label="Supprimer le produit">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Product Row 3 -->
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-10 rounded-md flex-shrink-0 overflow-hidden">
+                                            <img src="https://via.placeholder.com/100" alt="Crème hydratante" class="h-full w-full object-cover">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Crème Hydratante Visage</div>
+                                            <div class="text-sm text-gray-500">50ml, tous types de peau</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Soins de la Peau</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">980 DA</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">45</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                        Stock faible
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <div class="flex space-x-2">
+                                        <button class="text-blue-600 hover:text-blue-900" aria-label="Modifier le produit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900" aria-label="Supprimer le produit">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Product Row 4 -->
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-10 w-10 rounded-md flex-shrink-0 overflow-hidden">
+                                            <img src="https://via.placeholder.com/100" alt="Thermomètre" class="h-full w-full object-cover">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Thermomètre Digital</div>
+                                            <div class="text-sm text-gray-500">Mesure rapide, précision 0.1°C</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Matériel Médical</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">1,200 DA</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">0</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                        Rupture de stock
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <div class="flex space-x-2">
+                                        <button class="text-blue-600 hover:text-blue-900" aria-label="Modifier le produit">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900" aria-label="Supprimer le produit">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="border-t border-gray-200 px-4 py-4 sm:px-6 flex items-center justify-between">
+                    <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                        <div>
+                            <p class="text-sm text-gray-700">
+                                Affichage de <span class="font-medium">1</span> à <span class="font-medium">10</span> sur <span class="font-medium">45</span> produits
+                            </p>
+                        </div>
+                        <div>
+                            <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                                <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                    <span class="sr-only">Précédent</span>
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                                <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">1</a>
+                                <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">2</a>
+                                <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">3</a>
+                                <span class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">...</span>
+                                <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">8</a>
+                                <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">9</a>
+                                <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                    <span class="sr-only">Suivant</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Section -->
+        <div id="categories" class="admin-section container mx-auto px-4 py-8 hidden">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-gray-900">Gestion des Catégories</h2>
+                <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700" id="add-category-btn">
+                    <i class="fas fa-plus mr-2"></i>Ajouter une catégorie
+                </button>
+            </div>
+            
+            <!-- Categories Table -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="text-left py-3 px-4 text-gray-600">Nom</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Description</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Produits</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Statut</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">Médicaments</td>
+                                <td class="py-3 px-4">Médicaments sur ordonnance et en vente libre</td>
+                                <td class="py-3 px-4">450</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Active</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <button class="text-blue-600 hover:text-blue-900 mr-2" aria-label="Modifier la catégorie">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-600 hover:text-red-900" aria-label="Supprimer la catégorie">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">Soins de la Peau</td>
+                                <td class="py-3 px-4">Produits de soin et cosmétiques</td>
+                                <td class="py-3 px-4">320</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Active</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <button class="text-blue-600 hover:text-blue-900 mr-2" aria-label="Modifier la catégorie">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="text-red-600 hover:text-red-900" aria-label="Supprimer la catégorie">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Orders Section -->
+        <div id="orders" class="admin-section container mx-auto px-4 py-8 hidden">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-gray-900">Gestion des Commandes</h2>
+                <div class="flex space-x-4">
+                    <select class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" aria-label="Filtrer par statut">
+                        <option value="">Tous les statuts</option>
+                        <option value="pending">En attente</option>
+                        <option value="processing">En cours</option>
+                        <option value="completed">Terminée</option>
+                        <option value="cancelled">Annulée</option>
+                    </select>
+                    <input type="date" class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" aria-label="Filtrer par date">
+                </div>
+            </div>
+            
+            <!-- Orders Table -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="text-left py-3 px-4 text-gray-600">N° Commande</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Client</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Date</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Montant</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Statut</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">#12345</td>
+                                <td class="py-3 px-4">Ahmed Benali</td>
+                                <td class="py-3 px-4">21/04/2024</td>
+                                <td class="py-3 px-4">3,250 DA</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Livré</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <button class="text-blue-600 hover:text-blue-900 mr-2" aria-label="Voir les détails">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="text-green-600 hover:text-green-900" aria-label="Imprimer la facture">
+                                        <i class="fas fa-print"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Customers Section -->
+        <div id="customers" class="admin-section container mx-auto px-4 py-8 hidden">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-gray-900">Gestion des Clients</h2>
+                <div class="flex space-x-4">
+                    <input type="text" placeholder="Rechercher un client..." class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" aria-label="Rechercher un client">
+                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700" aria-label="Exporter les données">
+                        <i class="fas fa-download mr-2"></i>Exporter
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Customers Table -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="text-left py-3 px-4 text-gray-600">Client</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Email</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Téléphone</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Commandes</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Dernière commande</th>
+                                <th class="text-left py-3 px-4 text-gray-600">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-200">
+                                <td class="py-3 px-4">Ahmed Benali</td>
+                                <td class="py-3 px-4">ahmed.benali@email.com</td>
+                                <td class="py-3 px-4">0555 12 34 56</td>
+                                <td class="py-3 px-4">12</td>
+                                <td class="py-3 px-4">21/04/2024</td>
+                                <td class="py-3 px-4">
+                                    <button class="text-blue-600 hover:text-blue-900 mr-2" aria-label="Voir le profil">
+                                        <i class="fas fa-user"></i>
+                                    </button>
+                                    <button class="text-green-600 hover:text-green-900 mr-2" aria-label="Voir les commandes">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </button>
+                                    <button class="text-red-600 hover:text-red-900" aria-label="Supprimer le client">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stats Section -->
+        <div id="stats" class="admin-section container mx-auto px-4 py-8 hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Sales Chart -->
+                <div class="bg-white rounded-lg shadow-md p-6 col-span-1 md:col-span-2 lg:col-span-3">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Ventes par mois</h3>
+                    <div class="h-64 bg-gray-50 rounded-lg flex items-center justify-center">
+                        <p class="text-gray-500">Graphique des ventes</p>
+                    </div>
+                </div>
+                
+                <!-- Top Products -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Produits les plus vendus</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <div class="h-10 w-10 rounded-md bg-gray-100 mr-3"></div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Paracétamol 500mg</p>
+                                    <p class="text-xs text-gray-500">230 ventes</p>
+                                </div>
+                            </div>
+                            <span class="text-green-600 font-medium">150 DA</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Customer Stats -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Statistiques clients</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Nouveaux clients</span>
+                            <span class="font-medium">45</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Clients actifs</span>
+                            <span class="font-medium">1,234</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Panier moyen</span>
+                            <span class="font-medium">2,500 DA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Settings Section -->
+        <div id="settings" class="admin-section container mx-auto px-4 py-8 hidden">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-6">Paramètres</h2>
+                
+                <!-- General Settings -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Paramètres généraux</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nom de la pharmacie</label>
+                            <input type="text" value="Mon Coin Pharma" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" aria-label="Nom de la pharmacie" placeholder="Entrez le nom de la pharmacie">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email de contact</label>
+                            <input type="email" value="contact@moncoinpharma.dz" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" aria-label="Email de contact" placeholder="Entrez l'email de contact">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                            <input type="tel" value="0555 12 34 56" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" aria-label="Numéro de téléphone" placeholder="Entrez le numéro de téléphone">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Notification Settings -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Paramètres de notification</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Notifications par email</label>
+                                <p class="text-sm text-gray-500">Recevoir des notifications par email pour les nouvelles commandes</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="sr-only peer" checked aria-label="Activer les notifications par email">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+                            </label>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Notifications SMS</label>
+                                <p class="text-sm text-gray-500">Recevoir des notifications SMS pour les commandes urgentes</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="sr-only peer" aria-label="Activer les notifications SMS">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Save Button -->
+                <div class="flex justify-end">
+                    <button class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700" aria-label="Enregistrer les paramètres">
+                        Enregistrer les modifications
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Navigation menu
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const sidebar = document.querySelector('.sidebar');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    sidebar.classList.toggle('mobile-hidden');
+                });
+            }
+            
+            // User menu dropdown
+            const userMenuButton = document.getElementById('user-menu-button');
+            const userMenu = document.getElementById('user-menu');
+            
+            if (userMenuButton && userMenu) {
+                userMenuButton.addEventListener('click', function() {
+                    userMenu.classList.toggle('hidden');
+                });
+                
+                // Close when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!userMenuButton.contains(event.target) && !userMenu.contains(event.target)) {
+                        userMenu.classList.add('hidden');
+                    }
+                });
+            }
+            
+            // Section navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            const adminSections = document.querySelectorAll('.admin-section');
+            const pageTitle = document.querySelector('h1');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Update active link
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove('bg-green-50', 'text-green-600');
+                        navLink.classList.add('text-gray-700');
+                    });
+                    this.classList.remove('text-gray-700');
+                    this.classList.add('bg-green-50', 'text-green-600');
+                    
+                    // Get target section
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // Update page title
+                    pageTitle.textContent = this.textContent.trim();
+                    
+                    // Show target section, hide others
+                    adminSections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.classList.remove('hidden');
+                        } else {
+                            section.classList.add('hidden');
+                        }
+                    });
+                    
+                    // Hide mobile menu after clicking a link (on mobile)
+                    if (window.innerWidth < 768) {
+                        sidebar.classList.add('mobile-hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

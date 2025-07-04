@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - Mon Coin Pharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Bar -->
+    <div class="bg-green-800 text-white py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex space-x-4 text-sm">
+                <span><i class="fas fa-phone-alt mr-1"></i> +213 123 456 789</span>
+                <span><i class="fas fa-envelope mr-1"></i> contact@moncoinpharma.dz</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="login.html" class="text-sm hover:text-green-200"><i class="fas fa-user mr-1"></i> Mon Compte</a>
+                <a href="favorites.html" class="text-sm hover:text-green-200"><i class="fas fa-heart mr-1"></i> Favoris</a>
+                <a href="cart.html" class="text-sm hover:text-green-200"><i class="fas fa-shopping-cart mr-1"></i> Panier</a>
+                <div class="flex items-center">
+                    <i class="fas fa-globe mr-1"></i>
+                    <select class="bg-green-800 text-white border-none text-sm focus:ring-0" aria-label="Sélectionner la langue">
+                        <option>Français</option>
+                        <option>العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="text-green-700 mr-4">
+                    <i class="fas fa-bars text-2xl md:hidden"></i>
+                </div>
+                <a href="index.html" class="flex items-center">
+                <img src="assets/images/logo.png" alt="Mon Coin Pharma Logo" class="h-10 mr-2">
+                    <span class="text-2xl font-bold text-green-700">Mon Coin Pharma</span>
+                </a>
+            </div>
+
+            <div class="hidden md:flex flex-1 mx-8">
+                <div class="relative w-full">
+                    <input type="text" placeholder="Rechercher des médicaments, produits de soin..." 
+                           class="w-full py-2 px-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <button class="absolute right-0 top-0 h-full px-4 text-white bg-green-600 rounded-r-full hover:bg-green-700" aria-label="Rechercher">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="login.html" class="hidden md:block text-gray-700 hover:text-green-600">
+                    <i class="fas fa-user-circle text-2xl"></i>
+                </a>
+                <a href="favorites.html" class="text-gray-700 hover:text-green-600 relative">
+                    <i class="fas fa-heart text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </a>
+                <a href="cart.html" class="text-gray-700 hover:text-green-600 relative">
+                    <i class="fas fa-shopping-cart text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Search -->
+    <div class="md:hidden bg-white py-2 px-4 shadow-sm">
+        <div class="relative">
+            <input type="text" placeholder="Rechercher des produits..." 
+                   class="w-full py-2 px-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
+            <button class="absolute right-0 top-0 h-full px-4 text-white bg-green-600 rounded-r-full hover:bg-green-700" aria-label="Rechercher">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-green-700 text-white hidden md:block">
+        <div class="container mx-auto px-4">
+            <ul class="flex space-x-6 py-3">
+                <li><a href="index.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Accueil</a></li>
+                <li><a href="Products.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Produits</a></li>
+                <li><a href="promotions.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Promotions</a></li>
+                <li><a href="blog.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Blog</a></li>
+                <li><a href="about.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">À propos</a></li>
+                <li><a href="contact.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">À propos de Mon Coin Pharma</h1>
+                <p class="text-xl mb-6">Votre pharmacie en ligne de confiance en Algérie</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12">
+        <!-- Breadcrumb -->
+        <div class="mb-6">
+            <nav class="text-sm">
+                <ol class="flex space-x-2">
+            <li><a href="index.html" class="text-green-600 hover:text-green-800">Accueil</a></li>
+                    <li class="text-gray-500">/</li>
+                    <li class="text-gray-500">À propos</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Our Story -->
+        <section class="mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Notre Histoire</h2>
+                    <p class="text-gray-600 mb-4">
+                        Fondée en 2015, Mon Coin Pharma est née de la volonté de rendre les produits pharmaceutiques plus accessibles aux Algériens. Notre mission est de fournir des médicaments et des produits de santé de qualité à des prix abordables.
+                    </p>
+                    <p class="text-gray-600">
+                        Aujourd'hui, nous sommes fiers d'être l'une des pharmacies en ligne les plus fiables d'Algérie, avec des milliers de clients satisfaits et une équipe de pharmaciens dévoués.
+                    </p>
+                </div>
+                <div class="relative">
+    <img src="assets/images/histoire.jpg" alt="Notre équipe" class="rounded-lg shadow-lg">
+                    <div class="absolute -bottom-4 -right-4 bg-green-600 text-white p-4 rounded-lg shadow-lg">
+                        <p class="text-sm font-semibold">Plus de 50,000 clients satisfaits</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Nos Valeurs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-green-600 text-3xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Qualité</h3>
+                    <p class="text-gray-600">Nous nous engageons à fournir des produits authentiques et de qualité supérieure, provenant uniquement de fournisseurs agréés.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-green-600 text-3xl mb-4">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Accessibilité</h3>
+                    <p class="text-gray-600">Nous rendons les produits de santé accessibles à tous, avec des prix compétitifs et une livraison rapide dans toute l'Algérie.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-green-600 text-3xl mb-4">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Confiance</h3>
+                    <p class="text-gray-600">La confiance de nos clients est notre priorité. Nous garantissons la confidentialité et la sécurité de toutes vos données.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Team -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Notre Équipe</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <img src="assets/images/pharmacien1.jpg" alt="Pharmacien" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Dr. Ahmed Benali</h3>
+                    <p class="text-gray-600">Pharmacien en chef</p>
+                </div>
+                <div class="text-center">
+                    <img src="assets/images/pharmacie2.jpg" alt="Pharmacien" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Dr. Fatima Bouaziz</h3>
+                    <p class="text-gray-600">Responsable qualité</p>
+                </div>
+                <div class="text-center">
+                    <img src="assets/images/pharmacien1.jpg" alt="Pharmacien" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Dr. Karim Boudiaf</h3>
+                    <p class="text-gray-600">Responsable logistique</p>
+                </div>
+                <div class="text-center">
+                    <img src="assets/images/pharmacie2.jpg" alt="Pharmacien" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Dr. Leila Saadi</h3>
+                    <p class="text-gray-600">Responsable clientèle</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="bg-green-50 rounded-lg p-8 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <h3 class="text-4xl font-bold text-green-600 mb-2">50,000+</h3>
+                    <p class="text-gray-600">Clients satisfaits</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-green-600 mb-2">10,000+</h3>
+                    <p class="text-gray-600">Produits disponibles</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-green-600 mb-2">48h</h3>
+                    <p class="text-gray-600">Livraison maximale</p>
+                </div>
+                <div>
+                    <h3 class="text-4xl font-bold text-green-600 mb-2">24/7</h3>
+                    <p class="text-gray-600">Service client</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Mon Coin Pharma</h3>
+                    <p class="text-gray-400 mb-4">Votre pharmacie en ligne de confiance en Algérie, offrant des médicaments et produits de santé de qualité depuis 2015.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Liens rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="moncoin2.html" class="text-gray-400 hover:text-white">Accueil</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Produits</a></li>
+                        <li><a href="promotions.html" class="text-gray-400 hover:text-white">Promotions</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog Santé</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">À propos</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Catégories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Médicaments</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Soins de la Peau</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Santé & Bien-être</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Bébé & Enfant</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Premiers Secours</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Matériel Médical</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contactez-nous</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Rue de la Santé, Alger, Algérie</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-green-500 mr-3"></i>
+                            <span class="text-gray-400">+213 123 456 789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-green-500 mr-3"></i>
+                            <span class="text-gray-400">contact@moncoinpharma.dz</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-green-500 mr-3"></i>
+                            <span class="text-gray-400">Lun-Sam: 8h-20h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Mon Coin Pharma. Tous droits réservés.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Conditions générales</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <div id="chatbot-container" class="hidden bg-white rounded-t-xl shadow-xl w-80 h-96 flex flex-col">
+            <div class="bg-green-600 text-white p-3 rounded-t-xl flex justify-between items-center">
+                <h3 class="font-bold">Assistance Mon Coin Pharma</h3>
+                <button id="close-chat" class="text-white hover:text-gray-200" title="Fermer le chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto text-sm">
+                <div class="mb-4">
+                    <div class="bg-green-100 text-gray-800 rounded-lg p-3 inline-block max-w-xs">
+                        Bonjour ! Je suis l'assistant virtuel de Mon Coin Pharma. Comment puis-je vous aider aujourd'hui ?
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 border-t">
+                <div class="flex">
+                    <input type="text" placeholder="Tapez votre message..." 
+                           class="flex-grow py-2 px-3 border rounded-l focus:outline-none focus:ring-1 focus:ring-green-500 text-sm">
+                    <button class="bg-green-600 text-white px-4 rounded-r hover:bg-green-700" title="Envoyer le message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="mt-2 text-xs text-gray-500">
+                    En continuant, vous acceptez notre <a href="#" class="text-green-600">politique de confidentialité</a>.
+                </div>
+            </div>
+        </div>
+        <button id="chatbot-toggle" class="chatbot-toggle bg-green-600 text-white rounded-full p-4 shadow-lg hover:bg-green-700 transition duration-300" title="Ouvrir le chat">
+            <i class="fas fa-comment-medical text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-20 right-6 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 hidden" title="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Chatbot toggle
+        const chatbotToggle = document.getElementById('chatbot-toggle');
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const closeChat = document.getElementById('close-chat');
+
+        chatbotToggle.addEventListener('click', () => {
+            chatbotContainer.classList.toggle('hidden');
+        });
+
+        closeChat.addEventListener('click', () => {
+            chatbotContainer.classList.add('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Simple chatbot interaction
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.querySelector('#chatbot-container input[type="text"]');
+        const chatSend = document.querySelector('#chatbot-container button');
+
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                // Add user message
+                const userDiv = document.createElement('div');
+                userDiv.className = 'mb-4 flex justify-end';
+                userDiv.innerHTML = `
+                    <div class="bg-green-600 text-white rounded-lg p-3 inline-block max-w-xs">
+                        ${message}
+                    </div>
+                `;
+                chatMessages.appendChild(userDiv);
+                
+                // Clear input
+                chatInput.value = '';
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                // Add bot response after a short delay
+                setTimeout(() => {
+                    const responses = [
+                        "Je comprends votre demande. Un de nos pharmaciens vous répondra sous peu.",
+                        "Pour les médicaments sur ordonnance, veuillez télécharger votre prescription dans la section dédiée.",
+                        "Nos délais de livraison sont de 24h à Alger et 48h dans les autres wilayas.",
+                        "Vous pouvez suivre votre commande dans votre espace client ou via le lien reçu par email.",
+                        "Pour toute question urgente, vous pouvez nous appeler au +213 123 456 789."
+                    ];
+                    
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    
+                    const botDiv = document.createElement('div');
+                    botDiv.className = 'mb-4';
+                    botDiv.innerHTML = `
+                        <div class="bg-green-100 text-gray-800 rounded-lg p-3 inline-block max-w-xs">
+                            ${randomResponse}
+                        </div>
+                    `;
+                    chatMessages.appendChild(botDiv);
+                    
+                    // Scroll to bottom
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Coin Pharma - Votre Pharmacie en Ligne en Algérie</title>
+    <meta name="description" content="Mon Coin Pharma : votre pharmacie en ligne en Algérie. Commandez médicaments, soins, bien-être, livraison rapide et conseils santé.">
+    <meta name="keywords" content="pharmacie, médicaments, santé, algérie, livraison, bien-être, produits, soins, en ligne">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+        }
+        .category-card:hover, .product-card:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(56, 161, 105, 0.15);
+        }
+        .chatbot-toggle {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(56, 161, 105, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(56, 161, 105, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(56, 161, 105, 0);
+            }
+        }
+        .testimonial-bubble {
+            background: #fff;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 16px rgba(56, 161, 105, 0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .testimonial-bubble:before {
+            content: '';
+            position: absolute;
+            left: 2rem;
+            bottom: -1rem;
+            width: 2rem;
+            height: 2rem;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 4px 16px rgba(56, 161, 105, 0.08);
+        }
+        .newsletter-success {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Bar -->
+    <div class="bg-green-800 text-white py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex space-x-4 text-sm">
+                <a href="tel:+213123456789" class="hover:text-green-200">
+                    <i class="fas fa-phone-alt mr-1"></i> +213 123 456 789
+                </a>
+                <a href="mailto:contact@moncoinpharma.dz" class="hover:text-green-200">
+                    <i class="fas fa-envelope mr-1"></i> contact@moncoinpharma.dz
+                </a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="login.html" class="text-sm hover:text-green-200" data-nav-account="login">
+                    <i class="fas fa-user mr-1"></i> Mon Compte
+                </a>
+                <a href="favorites.html" class="text-sm hover:text-green-200" data-nav-account="favorites">
+                    <i class="fas fa-heart mr-1"></i> Favoris
+                </a>
+                <a href="cart.html" class="text-sm hover:text-green-200" data-nav-account="cart">
+                    <i class="fas fa-shopping-cart mr-1"></i> Panier
+                </a>
+                <div class="flex items-center">
+                    <i class="fas fa-globe mr-1"></i>
+                    <select class="bg-green-800 text-white border-none text-sm focus:ring-0" aria-label="Sélectionner la langue">
+                        <option value="fr">Français</option>
+                        <option value="ar">العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="text-green-700 mr-4">
+                    <button class="md:hidden" aria-label="Menu">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+        <a href="index.html" class="flex items-center" data-nav-main="home">
+            <img src="assets/images/logo.png" alt="Mon Coin Pharma Logo" class="h-10 mr-2">
+                    <span class="text-2xl font-bold text-green-700">Mon Coin Pharma</span>
+                </a>
+            </div>
+
+            <div class="hidden md:flex flex-1 mx-8">
+                <div class="relative w-full">
+                    <input type="text" placeholder="Rechercher des médicaments, produits de soin..." 
+                           class="w-full py-2 px-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
+<button class="absolute right-0 top-0 h-full px-4 text-white bg-green-600 rounded-r-full hover:bg-green-700" aria-label="Rechercher">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+            <a href="admin.html" class="hidden md:block text-gray-700 hover:text-green-600" data-nav-account="login">
+                    <i class="fas fa-user-circle text-2xl"></i>
+                </a>
+                <a href="favorites.html" class="text-gray-700 hover:text-green-600 relative" data-nav-account="favorites">
+                    <i class="fas fa-heart text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </a>
+                <a href="cart.html" class="text-gray-700 hover:text-green-600 relative" data-nav-account="cart">
+                    <i class="fas fa-shopping-cart text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Search -->
+    <div class="md:hidden bg-white py-2 px-4 shadow-sm">
+        <div class="relative">
+            <input type="text" placeholder="Rechercher..." 
+                   class="w-full py-2 px-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
+            <button class="absolute right-0 top-0 h-full px-4 text-white bg-green-600 rounded-r-full hover:bg-green-700" aria-label="Rechercher">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-green-700 text-white hidden md:block">
+        <div class="container mx-auto px-4">
+            <ul class="flex space-x-6 py-3">
+                <li><a href="index.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Accueil</a></li>
+                <li><a href="Products.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Produits</a></li>
+                <li><a href="promotions.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Promotions</a></li>
+                <li><a href="blog.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Blog</a></li>
+                <li><a href="about.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">À propos</a></li>
+                <li><a href="contact.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white">
+        <div class="container mx-auto px-4 py-12 md:py-20 text-center">
+            <div class="flex flex-col md:flex-row items-center justify-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 mx-auto text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4 flex items-center justify-center gap-3">
+                        <i class="fas fa-capsules"></i> Votre santé, notre priorité
+                    </h1>
+                    <p class="text-xl mb-6">Commandez vos médicaments et produits de soin en toute sécurité, livrés directement chez vous.</p>
+                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center">
+                        <a href="#categories" class="bg-white text-green-700 font-bold py-3 px-6 rounded-full hover:bg-gray-100 text-center transition shadow-lg border-2 border-green-600">Découvrir les catégories</a>
+                        <a href="#newsletter" class="border-2 border-white text-white font-bold py-3 px-6 rounded-full hover:bg-green-600 text-center transition shadow-lg">Recevoir nos offres</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <div class="bg-white py-6 shadow-sm">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-shield-alt text-3xl text-green-600 mb-2"></i>
+                    <span class="font-medium">Produits certifiés</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-truck text-3xl text-green-600 mb-2"></i>
+                    <span class="font-medium">Livraison rapide</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-lock text-3xl text-green-600 mb-2"></i>
+                    <span class="font-medium">Paiement sécurisé</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <i class="fas fa-headset text-3xl text-green-600 mb-2"></i>
+                    <span class="font-medium">Support 24/7</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories -->
+    <section id="categories" class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center flex items-center justify-center gap-2"><i class="fas fa-th-large text-green-600"></i> Nos Catégories</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <a href="#" class="category-card bg-white rounded-lg shadow-md p-6 text-center transition duration-300">
+                    <div class="bg-green-100 rounded-full p-4 inline-block mb-4">
+                        <i class="fas fa-pills text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Médicaments</h3>
+                    <p class="text-gray-600">Ordonnance et en vente libre</p>
+                </a>
+                <a href="#" class="category-card bg-white rounded-lg shadow-md p-6 text-center transition duration-300">
+                    <div class="bg-green-100 rounded-full p-4 inline-block mb-4">
+                        <i class="fas fa-spa text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Soins de la Peau</h3>
+                    <p class="text-gray-600">Crèmes, lotions et plus</p>
+                </a>
+                <a href="#" class="category-card bg-white rounded-lg shadow-md p-6 text-center transition duration-300">
+                    <div class="bg-green-100 rounded-full p-4 inline-block mb-4">
+                        <i class="fas fa-heartbeat text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Santé & Bien-être</h3>
+                    <p class="text-gray-600">Vitamines et suppléments</p>
+                </a>
+                <a href="#" class="category-card bg-white rounded-lg shadow-md p-6 text-center transition duration-300">
+                    <div class="bg-green-100 rounded-full p-4 inline-block mb-4">
+                        <i class="fas fa-baby text-3xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800">Bébé & Enfant</h3>
+                    <p class="text-gray-600">Produits spécialisés</p>
+                </a>
+            </div>
+            <div class="flex justify-center mt-8">
+                <a href="Products.html" class="bg-green-600 text-white font-bold py-2 px-6 rounded-full hover:bg-green-700 transition">Voir tous les produits</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 flex items-center gap-2"><i class="fas fa-star text-yellow-400"></i> Produits Populaires</h2>
+                <a href="Products.html" class="text-green-600 font-medium hover:text-green-800">Voir tout <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <a href="product.html" class="block group">
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                        <div class="relative">
+                            <img src="assets/images/produit1.jpg" alt="Doliprane 1000mg" class="w-full h-48 object-cover">
+                            <div class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">-15%</div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-semibold text-gray-800">Doliprane 1000mg</h3>
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                    <span class="text-gray-600 text-sm ml-1">4.8</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">Paracétamol - Boîte de 16 comprimés</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-green-600">1,200 DA</span>
+                                    <span class="text-gray-400 text-sm line-through ml-2">1,400 DA</span>
+                                </div>
+                                <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" title="Ajouter au panier">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Product 2 -->
+                <a href="product.html" class="block group">
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                        <div class="relative">
+                            <img src="assets/images/produit2.jpeg" alt="Crème Hydratante Nivea" class="w-full h-48 object-cover">
+                            <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">Nouveau</div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-semibold text-gray-800">Crème Hydratante</h3>
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                    <span class="text-gray-600 text-sm ml-1">4.5</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">Nivea - 200ml</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-green-600">1,800 DA</span>
+                                </div>
+                                <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" title="Ajouter au panier">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Product 3 -->
+                <a href="product.html" class="block group">
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                        <div class="relative">
+                            <img src="assets/images/produit3.jpg" alt="Vitamine C Activit+" class="w-full h-48 object-cover">
+                            <div class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">-10%</div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-semibold text-gray-800">Vitamine C</h3>
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                    <span class="text-gray-600 text-sm ml-1">4.7</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">Complément alimentaire - 60 gélules</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-green-600">2,400 DA</span>
+                                    <span class="text-gray-400 text-sm line-through ml-2">2,700 DA</span>
+                                </div>
+                                <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" title="Ajouter au panier">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Product 4 -->
+                <a href="product.html" class="block group">
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                        <div class="relative">
+                            <img src="assets/images/produit4.jpg" alt="Lait Bébé Althéra" class="w-full h-48 object-cover">
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-semibold text-gray-800">Lait Bébé</h3>
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                    <span class="text-gray-600 text-sm ml-1">4.9</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">Nestlé - 400g</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-green-600">3,100 DA</span>
+                                </div>
+                                <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" title="Ajouter au panier">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nouveaux Produits -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800">Nouveaux Produits</h2>
+                <a href="products.html" class="text-green-600 font-medium hover:text-green-800">Voir tout <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Nouveau Produit 1 -->
+                <a href="product.html" class="block group">
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                        <div class="relative">
+                            <img src="assets/images/produit5.jpg" alt="Sérum Vitamine C" class="w-full h-48 object-cover">
+                            <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">Nouveau</div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-semibold text-gray-800">Sérum Vitamine C</h3>
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                    <span class="text-gray-600 text-sm ml-1">4.9</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">Soin anti-âge - 30ml</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-green-600">2,500 DA</span>
+                                </div>
+                                <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" title="Ajouter au panier">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Nouveau Produit 2 -->
+                <a href="product.html" class="block group">
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                        <div class="relative">
+                            <img src="assets/images/produit6.png" alt="Probiotiques Plus" class="w-full h-48 object-cover">
+                            <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">Nouveau</div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-semibold text-gray-800">Probiotiques Plus</h3>
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                    <span class="text-gray-600 text-sm ml-1">4.7</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">30 gélules</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-green-600">3,200 DA</span>
+                                </div>
+                                <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" title="Ajouter au panier">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Nouveau Produit 3 -->
+                <a href="product.html" class="block group">
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                        <div class="relative">
+                            <img src="assets/images/produit8.png" alt="Masque Hydratant" class="w-full h-48 object-cover">
+                            <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">Nouveau</div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-semibold text-gray-800">Masque Hydratant</h3>
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                    <span class="text-gray-600 text-sm ml-1">4.8</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">Pack de 5 masques</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-green-600">1,800 DA</span>
+                                </div>
+                                <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" title="Ajouter au panier">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Nouveau Produit 4 -->
+                <a href="product.html" class="block group">
+                    <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                        <div class="relative">
+                            <img src="assets/images/produit4.jpg" alt="Huile Essentielle Bio" class="w-full h-48 object-cover">
+                            <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">Nouveau</div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-semibold text-gray-800">Huile Essentielle Bio</h3>
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                    <span class="text-gray-600 text-sm ml-1">4.6</span>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">Lavande - 15ml</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="font-bold text-green-600">1,500 DA</span>
+                                </div>
+                                <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" title="Ajouter au panier">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotions Spéciales -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800">Promotions Spéciales</h2>
+                <a href="promotions.html" class="text-green-600 font-medium hover:text-green-800">Voir tout <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Grande Promotion 1 -->
+                <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 p-6 text-white">
+                            <div class="bg-white text-green-600 text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">-30%</div>
+                            <h3 class="text-2xl font-bold mb-2">Pack Immunité</h3>
+                            <p class="mb-4">Vitamine C + Zinc + Probiotiques</p>
+                            <div class="mb-4">
+                                <span class="text-3xl font-bold">4,900 DA</span>
+                                <span class="text-lg line-through ml-2 opacity-75">7,000 DA</span>
+                            </div>
+                            <button class="bg-white text-green-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition duration-300" title="Voir l'offre">
+                                Voir l'offre
+                            </button>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="assets/images/pack1.jpeg" alt="Pack Immunité" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grande Promotion 2 -->
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg shadow-lg overflow-hidden">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/2 p-6 text-white">
+                            <div class="bg-white text-blue-600 text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">-25%</div>
+                            <h3 class="text-2xl font-bold mb-2">Pack Beauté</h3>
+                            <p class="mb-4">Crème + Sérum + Masque</p>
+                            <div class="mb-4">
+                                <span class="text-3xl font-bold">5,600 DA</span>
+                                <span class="text-lg line-through ml-2 opacity-75">7,500 DA</span>
+                            </div>
+                            <button class="bg-white text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition duration-300" title="Voir l'offre">
+                                Voir l'offre
+                            </button>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="assets/images/pack2.jpeg" alt="Pack Beauté" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catégories Populaires -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Catégories Populaires</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <!-- Catégorie 1 -->
+                <a href="products.html?category=vitamines" class="group">
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center group-hover:bg-green-200">
+                            <i class="fas fa-capsules text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800">Vitamines</h3>
+                        <p class="text-sm text-gray-600 mt-1">150+ produits</p>
+                    </div>
+                </a>
+
+                <!-- Catégorie 2 -->
+                <a href="products.html?category=beaute" class="group">
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-pink-100 rounded-full flex items-center justify-center group-hover:bg-pink-200">
+                            <i class="fas fa-spa text-2xl text-pink-600"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800">Beauté</h3>
+                        <p class="text-sm text-gray-600 mt-1">200+ produits</p>
+                    </div>
+                </a>
+
+                <!-- Catégorie 3 -->
+                <a href="products.html?category=bebe" class="group">
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200">
+                            <i class="fas fa-baby text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800">Bébé</h3>
+                        <p class="text-sm text-gray-600 mt-1">120+ produits</p>
+                    </div>
+                </a>
+
+                <!-- Catégorie 4 -->
+                <a href="products.html?category=hygiene" class="group">
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center group-hover:bg-purple-200">
+                            <i class="fas fa-pump-soap text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800">Hygiène</h3>
+                        <p class="text-sm text-gray-600 mt-1">180+ produits</p>
+                    </div>
+                </a>
+
+                <!-- Catégorie 5 -->
+                <a href="products.html?category=sport" class="group">
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full flex items-center justify-center group-hover:bg-red-200">
+                            <i class="fas fa-running text-2xl text-red-600"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800">Sport</h3>
+                        <p class="text-sm text-gray-600 mt-1">90+ produits</p>
+                    </div>
+                </a>
+
+                <!-- Catégorie 6 -->
+                <a href="products.html?category=naturel" class="group">
+                    <div class="bg-white rounded-lg shadow-md p-4 text-center transition duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-yellow-100 rounded-full flex items-center justify-center group-hover:bg-yellow-200">
+                            <i class="fas fa-leaf text-2xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800">Naturel</h3>
+                        <p class="text-sm text-gray-600 mt-1">160+ produits</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog et Conseils Santé -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800">Blog et Conseils Santé</h2>
+                <a href="blog.html" class="text-green-600 font-medium hover:text-green-800">Voir tout <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Article 1 -->
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="assets/images/blog1.jpg/" alt="Article sur la santé" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-600 mb-4">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>15 Mars 2024</span>
+                            <i class="far fa-clock ml-4 mr-2"></i>
+                            <span>5 min de lecture</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Comment renforcer son système immunitaire naturellement</h3>
+                        <p class="text-gray-600 mb-4">Découvrez les meilleurs conseils pour booster vos défenses immunitaires avec des solutions naturelles.</p>
+                        <a href="blog-article.html" class="text-green-600 font-medium hover:text-green-800">Lire la suite <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="assets/images/blog2.jpg" alt="Article sur la beauté" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-600 mb-4">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>12 Mars 2024</span>
+                            <i class="far fa-clock ml-4 mr-2"></i>
+                            <span>4 min de lecture</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Les bienfaits de la vitamine C pour votre peau</h3>
+                        <p class="text-gray-600 mb-4">Tout ce que vous devez savoir sur les effets de la vitamine C dans votre routine de soin.</p>
+                        <a href="blog-article.html" class="text-green-600 font-medium hover:text-green-800">Lire la suite <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="assets/images/blog3.jpg" alt="Article sur le sommeil" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-600 mb-4">
+                            <i class="far fa-calendar mr-2"></i>
+                            <span>10 Mars 2024</span>
+                            <i class="far fa-clock ml-4 mr-2"></i>
+                            <span>6 min de lecture</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Améliorez votre sommeil avec ces conseils d'experts</h3>
+                        <p class="text-gray-600 mb-4">Les meilleures pratiques et solutions naturelles pour un sommeil réparateur.</p>
+                        <a href="blog-article.html" class="text-green-600 font-medium hover:text-green-800">Lire la suite <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prescription Section -->
+    <section class="py-12 bg-green-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <img src="assets/images/ordonnace.jpg" alt="Prescription médicale" class="rounded-lg shadow-md">
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Médicaments sur ordonnance</h2>
+                    <p class="text-gray-600 mb-6">Pour les médicaments nécessitant une ordonnance, téléchargez simplement votre prescription et notre équipe de pharmaciens la vérifiera rapidement.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-check text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Vérification rapide</h3>
+                                <p class="text-gray-600 text-sm">Notre équipe traite les ordonnances sous 1 heure en moyenne.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-shield-alt text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Confidentialité assurée</h3>
+                                <p class="text-gray-600 text-sm">Vos données médicales sont protégées et traitées avec discrétion.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-2 rounded-full mr-4">
+                                <i class="fas fa-truck text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800">Livraison express</h3>
+                                <p class="text-gray-600 text-sm">Livraison en 24h à Alger, 48h dans les autres wilayas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mt-6 bg-green-600 text-white font-bold py-3 px-6 rounded-full hover:bg-green-700 flex items-center">
+                        <i class="fas fa-upload mr-2"></i> Télécharger mon ordonnance
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center flex items-center gap-2"><i class="fas fa-users text-green-600"></i> Ce que disent nos clients</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-bubble">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="rounded-full mr-3 w-12 h-12">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Karim B.</h4>
+                            <p class="text-gray-500 text-sm">Alger</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-2">"Commande rapide et livraison impeccable. Les médicaments étaient exactement ce que j'avais commandé et l'emballage était parfait."</p>
+                    <div class="flex items-center">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                <div class="testimonial-bubble">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="rounded-full mr-3 w-12 h-12">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Amina T.</h4>
+                            <p class="text-gray-500 text-sm">Oran</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-2">"Service client exceptionnel ! J'ai eu un problème avec ma commande et ils ont tout résolu en moins d'une heure. Je recommande vivement."</p>
+                    <div class="flex items-center">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                </div>
+                <div class="testimonial-bubble">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Client" class="rounded-full mr-3 w-12 h-12">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Samir K.</h4>
+                            <p class="text-gray-500 text-sm">Constantine</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-2">"Première commande et très satisfaite. Les produits de soin sont authentiques et bien emballés. La livraison a été plus rapide que prévu."</p>
+                    <div class="flex items-center">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section id="newsletter" class="py-12 bg-green-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4 flex items-center justify-center gap-2"><i class="fas fa-envelope"></i> Abonnez-vous à notre newsletter</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Recevez des offres exclusives, des conseils santé et les dernières nouveautés directement dans votre boîte email.</p>
+            <form class="flex flex-col md:flex-row max-w-xl mx-auto" id="newsletterForm">
+                <input type="email" placeholder="Votre adresse email" required aria-label="Votre adresse email"
+                       class="flex-grow py-3 px-4 rounded-l-full md:rounded-r-none rounded-r-full mb-2 md:mb-0 focus:outline-none text-gray-800">
+                <button class="bg-green-800 hover:bg-green-900 py-3 px-6 rounded-r-full md:rounded-l-none rounded-l-full font-bold transition duration-300 flex items-center gap-2" type="submit" aria-label="S'abonner">
+                    <i class="fas fa-paper-plane"></i> S'abonner
+                </button>
+            </form>
+            <div id="newsletterSuccess" class="newsletter-success text-green-200 font-semibold mt-4 flex items-center justify-center gap-2"><i class="fas fa-check-circle"></i> Merci pour votre inscription !</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Mon Coin Pharma</h3>
+                    <p class="text-gray-400 mb-4">Votre pharmacie en ligne de confiance en Algérie, offrant des médicaments et produits de santé de qualité depuis 2015.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Liens rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="moncoin2.html" class="text-gray-400 hover:text-white">Accueil</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Produits</a></li>
+                        <li><a href="promotions.html" class="text-gray-400 hover:text-white">Promotions</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog Santé</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">À propos</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Catégories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Médicaments</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Soins de la Peau</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Santé & Bien-être</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Bébé & Enfant</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Premiers Secours</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Matériel Médical</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contactez-nous</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Rue de la Santé, Alger, Algérie</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-green-500 mr-3"></i>
+                            <span class="text-gray-400">+213 123 456 789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-green-500 mr-3"></i>
+                            <span class="text-gray-400">contact@moncoinpharma.dz</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-green-500 mr-3"></i>
+                            <span class="text-gray-400">Lun-Sam: 8h-20h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Mon Coin Pharma. Tous droits réservés.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Conditions générales</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <div id="chatbot-container" class="hidden bg-white rounded-t-xl shadow-xl w-80 h-96 flex flex-col">
+            <div class="bg-green-600 text-white p-3 rounded-t-xl flex justify-between items-center">
+                <h3 class="font-bold">Assistance Mon Coin Pharma</h3>
+                <button id="close-chat" class="text-white hover:text-gray-200" title="Fermer le chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto text-sm">
+                <div class="mb-4">
+                    <div class="bg-green-100 text-gray-800 rounded-lg p-3 inline-block max-w-xs">
+                        Bonjour ! Je suis l'assistant virtuel de Mon Coin Pharma. Comment puis-je vous aider aujourd'hui ?
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 border-t">
+                <div class="flex">
+                    <input type="text" placeholder="Tapez votre message..." 
+                           class="flex-grow py-2 px-3 border rounded-l focus:outline-none focus:ring-1 focus:ring-green-500 text-sm">
+                    <button class="bg-green-600 text-white px-4 rounded-r hover:bg-green-700" title="Envoyer le message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="mt-2 text-xs text-gray-500">
+                    En continuant, vous acceptez notre <a href="#" class="text-green-600">politique de confidentialité</a>.
+                </div>
+            </div>
+        </div>
+        <button id="chatbot-toggle" class="chatbot-toggle bg-green-600 text-white rounded-full p-4 shadow-lg hover:bg-green-700 transition duration-300" title="Ouvrir le chat">
+            <i class="fas fa-comment-medical text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-20 right-6 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 hidden" title="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Chatbot toggle
+        const chatbotToggle = document.getElementById('chatbot-toggle');
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const closeChat = document.getElementById('close-chat');
+
+        chatbotToggle.addEventListener('click', () => {
+            chatbotContainer.classList.toggle('hidden');
+        });
+
+        closeChat.addEventListener('click', () => {
+            chatbotContainer.classList.add('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Simple chatbot interaction
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.querySelector('#chatbot-container input[type="text"]');
+        const chatSend = document.querySelector('#chatbot-container button');
+
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                // Add user message
+                const userDiv = document.createElement('div');
+                userDiv.className = 'mb-4 flex justify-end';
+                userDiv.innerHTML = `
+                    <div class="bg-green-600 text-white rounded-lg p-3 inline-block max-w-xs">
+                        ${message}
+                    </div>
+                `;
+                chatMessages.appendChild(userDiv);
+                
+                // Clear input
+                chatInput.value = '';
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                // Add bot response after a short delay
+                setTimeout(() => {
+                    const responses = [
+                        "Je comprends votre demande. Un de nos pharmaciens vous répondra sous peu.",
+                        "Pour les médicaments sur ordonnance, veuillez télécharger votre prescription dans la section dédiée.",
+                        "Nos délais de livraison sont de 24h à Alger et 48h dans les autres wilayas.",
+                        "Vous pouvez suivre votre commande dans votre espace client ou via le lien reçu par email.",
+                        "Pour toute question urgente, vous pouvez nous appeler au +213 123 456 789."
+                    ];
+                    
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    
+                    const botDiv = document.createElement('div');
+                    botDiv.className = 'mb-4';
+                    botDiv.innerHTML = `
+                        <div class="bg-green-100 text-gray-800 rounded-lg p-3 inline-block max-w-xs">
+                            ${randomResponse}
+                        </div>
+                    `;
+                    chatMessages.appendChild(botDiv);
+                    
+                    // Scroll to bottom
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1000);
+            }
+        }
+
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartCount = document.querySelector('.fa-shopping-cart + span');
+
+        // Update cart count display
+        function updateCartCount() {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        // Add to cart function
+        function addToCart(productId, productName, price, image) {
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: productId,
+                    name: productName,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+            }
+            
+            updateCartCount();
+            
+            // Show success message
+            const successMessage = document.createElement('div');
+            successMessage.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            successMessage.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    <span>Produit ajouté au panier</span>
+                </div>
+            `;
+            document.body.appendChild(successMessage);
+            
+            // Remove message after 3 seconds
+            setTimeout(() => {
+                successMessage.remove();
+            }, 3000);
+        }
+
+        // Add event listeners to all add to cart buttons
+        document.querySelectorAll('.product-card button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const productCard = e.target.closest('.product-card');
+                const productId = productCard.dataset.productId;
+                const productName = productCard.querySelector('h3').textContent;
+                const price = productCard.querySelector('.text-green-600').textContent;
+                const image = productCard.querySelector('img').src;
+                
+                addToCart(productId, productName, price, image);
+            });
+        });
+
+        // Initialize cart count
+        updateCartCount();
+
+        // Ajout de la gestion du menu mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.md\\:hidden button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Gestion des liens de navigation
+            document.querySelectorAll('[data-nav-account]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const target = this.getAttribute('data-nav-account');
+                    console.log(`Navigating to ${target}`);
+                });
+            });
+
+            // Gestion des boutons de recherche
+            document.querySelectorAll('button[aria-label="Rechercher"]').forEach(button => {
+                button.addEventListener('click', function() {
+                    const searchInput = this.parentElement.querySelector('input');
+                    if (searchInput && searchInput.value.trim()) {
+                        console.log('Recherche:', searchInput.value.trim());
+                        // Ajoutez ici la logique de recherche
+                    }
+                });
+            });
+
+            // Gestion du panier
+            const cartButtons = document.querySelectorAll('.product-card button');
+            cartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productCard = this.closest('.product-card');
+                    const productName = productCard.querySelector('h3').textContent;
+                    const productPrice = productCard.querySelector('.text-green-600').textContent;
+                    
+                    // Mise à jour du compteur du panier
+                    const cartCount = document.querySelector('.fa-shopping-cart + span');
+                    const currentCount = parseInt(cartCount.textContent);
+                    cartCount.textContent = currentCount + 1;
+                    
+                    // Afficher une notification
+                    alert(`${productName} ajouté au panier`);
+                });
+            });
+        });
+
+        // Confirmation newsletter
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('newsletterForm');
+            const successMsg = document.getElementById('newsletterSuccess');
+            if(form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    form.reset();
+                    successMsg.style.display = 'flex';
+                    setTimeout(() => successMsg.style.display = 'none', 4000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

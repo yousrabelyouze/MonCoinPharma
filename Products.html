@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Same head content as home page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produits - Mon Coin Pharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Same custom styles as home page */
+        body { font-family: 'Poppins', sans-serif; }
+        .hero-gradient {
+            background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Top Bar -->
+    <div class="bg-green-800 text-white py-2 px-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex space-x-4 text-sm">
+                <span><i class="fas fa-phone-alt mr-1"></i> +213 123 456 789</span>
+                <span><i class="fas fa-envelope mr-1"></i> contact@moncoinpharma.dz</span>
+            </div>
+            <div class="flex space-x-4">
+        <a href="admin.html" class="text-sm hover:text-green-200"><i class="fas fa-user mr-1"></i> Mon Compte</a>
+        <a href="favorites.html" class="text-sm hover:text-green-200"><i class="fas fa-heart mr-1"></i> Favoris</a>
+                <div class="flex items-center">
+                    <i class="fas fa-globe mr-1"></i>
+                    <select class="bg-green-800 text-white border-none text-sm focus:ring-0" aria-label="Sélectionner la langue">
+                        <option>Français</option>
+                        <option>العربية</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="text-green-700 mr-4">
+                    <i class="fas fa-bars text-2xl md:hidden"></i>
+                </div>
+    <a href="index.html" class="flex items-center">
+                    <img src="assets/images/logo.png" alt="Mon Coin Pharma Logo" class="h-10 mr-2">
+                    <span class="text-2xl font-bold text-green-700">Mon Coin Pharma</span>
+                </a>
+            </div>
+
+            <div class="hidden md:flex flex-1 mx-8">
+                <div class="relative w-full">
+                    <input type="text" placeholder="Rechercher des médicaments, produits de soin..." 
+                           class="w-full py-2 px-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <button class="absolute right-0 top-0 h-full px-4 text-white bg-green-600 rounded-r-full hover:bg-green-700" aria-label="Rechercher">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hidden md:block text-gray-700 hover:text-green-600">
+                    <i class="fas fa-user-circle text-2xl"></i>
+                </a>
+                <a href="#" class="text-gray-700 hover:text-green-600 relative">
+                    <i class="fas fa-heart text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </a>
+                <a href="#" class="text-gray-700 hover:text-green-600 relative">
+                    <i class="fas fa-shopping-cart text-2xl"></i>
+                    <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Search -->
+    <div class="md:hidden bg-white py-2 px-4 shadow-sm">
+        <div class="relative">
+            <input type="text" placeholder="Rechercher..." 
+                   class="w-full py-2 px-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
+            <button class="absolute right-0 top-0 h-full px-4 text-white bg-green-600 rounded-r-full hover:bg-green-700" aria-label="Rechercher">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-green-700 text-white hidden md:block">
+        <div class="container mx-auto px-4">
+            <ul class="flex space-x-6 py-3">
+                <li><a href="index.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Accueil</a></li>
+                <li><a href="Products.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Produits</a></li>
+                <li><a href="promotions.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Promotions</a></li>
+                <li><a href="blog.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Blog</a></li>
+                <li><a href="about.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">À propos</a></li>
+                <li><a href="contact.html" class="hover:bg-green-600 px-3 py-2 rounded-md font-medium">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Breadcrumb -->
+        <div class="mb-6">
+            <nav class="text-sm">
+                <ol class="flex space-x-2">
+                    <li><a href="moncoin2.html" class="text-green-600 hover:text-green-800">Accueil</a></li>
+                    <li class="text-gray-500">/</li>
+                    <li class="text-gray-500">Produits</li>
+                </ol>
+            </nav>
+        </div>
+
+        <!-- Categories Sidebar -->
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="md:w-1/4">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Catégories</h3>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="flex items-center justify-between text-gray-600 hover:text-green-600">
+                                <span>Médicaments</span>
+                                <span class="text-sm">(120)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center justify-between text-gray-600 hover:text-green-600">
+                                <span>Soins de la Peau</span>
+                                <span class="text-sm">(85)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center justify-between text-gray-600 hover:text-green-600">
+                                <span>Santé & Bien-être</span>
+                                <span class="text-sm">(65)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center justify-between text-gray-600 hover:text-green-600">
+                                <span>Bébé & Enfant</span>
+                                <span class="text-sm">(45)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center justify-between text-gray-600 hover:text-green-600">
+                                <span>Premiers Secours</span>
+                                <span class="text-sm">(30)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="flex items-center justify-between text-gray-600 hover:text-green-600">
+                                <span>Matériel Médical</span>
+                                <span class="text-sm">(25)</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Filters -->
+                <div class="bg-white rounded-lg shadow-md p-6 mt-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Filtres</h3>
+                    
+                    <!-- Price Range -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-700 mb-2">Prix</h4>
+                        <div class="flex items-center space-x-4">
+                            <input type="number" placeholder="Min" class="w-24 px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-green-500">
+                            <span>-</span>
+                            <input type="number" placeholder="Max" class="w-24 px-3 py-2 border rounded focus:outline-none focus:ring-1 focus:ring-green-500">
+                        </div>
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-700 mb-2">Disponibilité</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-green-600">
+                                <span class="ml-2 text-gray-600">En stock</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-green-600">
+                                <span class="ml-2 text-gray-600">Pré-commande</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Brand -->
+                    <div class="mb-6">
+                        <h4 class="font-semibold text-gray-700 mb-2">Marque</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-green-600">
+                                <span class="ml-2 text-gray-600">Sanofi</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-green-600">
+                                <span class="ml-2 text-gray-600">GSK</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox text-green-600">
+                                <span class="ml-2 text-gray-600">Pfizer</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="md:w-3/4">
+                <!-- Sort and View Options -->
+                <div class="bg-white rounded-lg shadow-md p-4 mb-6 flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <span class="text-gray-600">Affichage de 1-12 sur 120 produits</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <select class="border rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-green-500" title="Trier les produits" aria-label="Trier les produits">
+                            <option>Trier par: Pertinence</option>
+                            <option>Prix: Croissant</option>
+                            <option>Prix: Décroissant</option>
+                            <option>Nouveautés</option>
+                            <option>Meilleures ventes</option>
+                        </select>
+                        <div class="flex space-x-2">
+                            <button class="p-2 border rounded hover:bg-gray-100" aria-label="Vue en grille">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="p-2 border rounded hover:bg-gray-100" aria-label="Vue en liste">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Product 1 -->
+                    <a href="product.html" class="block group">
+                        <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                            <div class="relative">
+                                <img src="assets/images/produit1.jpg" alt="Produit 1" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">-15%</div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-semibold text-gray-800">Doliprane 1000mg</h3>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                        <span class="text-gray-600 text-sm ml-1">4.8</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">Paracétamol - Boîte de 16 comprimés</p>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-green-600">1,200 DA</span>
+                                        <span class="text-gray-400 text-sm line-through ml-2">1,400 DA</span>
+                                    </div>
+                                    <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" aria-label="Ajouter au panier">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Product 2 -->
+                    <a href="product.html" class="block group">
+                        <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                            <div class="relative">
+                                <img src="assets/images/produit3.jpg" alt="Produit 2" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded-full">Nouveau</div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-semibold text-gray-800">Crème Hydratante</h3>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                        <span class="text-gray-600 text-sm ml-1">4.5</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">Nivea - 200ml</p>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-green-600">1,800 DA</span>
+                                    </div>
+                                    <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" aria-label="Ajouter au panier">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Product 3 -->
+                    <a href="product.html" class="block group">
+                        <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                            <div class="relative">
+                                <img src="assets/images/produit6.png" alt="Produit 3" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">-10%</div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-semibold text-gray-800">Vitamine C</h3>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                        <span class="text-gray-600 text-sm ml-1">4.7</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">Complément alimentaire - 60 gélules</p>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-green-600">2,400 DA</span>
+                                        <span class="text-gray-400 text-sm line-through ml-2">2,700 DA</span>
+                                    </div>
+                                    <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" aria-label="Ajouter au panier">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Product 4 -->
+                    <a href="product.html" class="block group">
+                        <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                            <div class="relative">
+                                <img src="assets/images/produit9.jpg" alt="Produit 4" class="w-full h-48 object-cover">
+                            </div>
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-semibold text-gray-800">Lait Bébé</h3>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                        <span class="text-gray-600 text-sm ml-1">4.9</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">Nestlé - 400g</p>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-green-600">3,100 DA</span>
+                                    </div>
+                                    <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" aria-label="Ajouter au panier">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Product 5 -->
+                    <a href="product.html" class="block group">
+                        <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                            <div class="relative">
+                                <img src="assets/images/produit8.png" alt="Produit 5" class="w-full h-48 object-cover">
+                            </div>
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-semibold text-gray-800">Tensiomètre</h3>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                        <span class="text-gray-600 text-sm ml-1">4.6</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">Omron - Automatique</p>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-green-600">4,500 DA</span>
+                                    </div>
+                                    <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" aria-label="Ajouter au panier">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Product 6 -->
+                    <a href="product.html" class="block group">
+                        <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                            <div class="relative">
+                                <img src="assets/images/produit5.jpg" alt="Produit 6" class="w-full h-48 object-cover">
+                                <div class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">-20%</div>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-semibold text-gray-800">Shampooing</h3>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                        <span class="text-gray-600 text-sm ml-1">4.4</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">Ducray - 400ml</p>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-green-600">1,600 DA</span>
+                                        <span class="text-gray-400 text-sm line-through ml-2">2,000 DA</span>
+                                    </div>
+                                    <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" aria-label="Ajouter au panier">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Product 7 -->
+                    <a href="product.html" class="block group">
+                        <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                            <div class="relative">
+                                <img src="assets/images/produit4.jpg" alt="Produit 7" class="w-full h-48 object-cover">
+                            </div>
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-semibold text-gray-800">Lait Bébé</h3>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                        <span class="text-gray-600 text-sm ml-1">4.9</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">Nestlé - 400g</p>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-green-600">3,100 DA</span>
+                                    </div>
+                                    <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" aria-label="Ajouter au panier">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Product 8 -->
+                    <a href="product.html" class="block group">
+                        <div class="product-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300 group-hover:shadow-lg">
+                            <div class="relative">
+                                <img src="assets/images/produit2.jpeg" alt="Produit 8" class="w-full h-48 object-cover">
+                            </div>
+                            <div class="p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="font-semibold text-gray-800">Crème Hydratante</h3>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                        <span class="text-gray-600 text-sm ml-1">4.5</span>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-3">Nivea - 200ml</p>
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="font-bold text-green-600">1,800 DA</span>
+                                    </div>
+                                    <button class="bg-green-100 text-green-600 p-2 rounded-full hover:bg-green-200" aria-label="Ajouter au panier">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-8 flex justify-center">
+                    <nav class="flex items-center space-x-2">
+                        <a href="#" class="px-4 py-2 border rounded hover:bg-green-100 text-green-600">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a href="#" class="px-4 py-2 border rounded bg-green-600 text-white">1</a>
+                        <a href="#" class="px-4 py-2 border rounded hover:bg-green-100 text-green-600">2</a>
+                        <a href="#" class="px-4 py-2 border rounded hover:bg-green-100 text-green-600">3</a>
+                        <span class="px-4 py-2 text-gray-500">...</span>
+                        <a href="#" class="px-4 py-2 border rounded hover:bg-green-100 text-green-600">10</a>
+                        <a href="#" class="px-4 py-2 border rounded hover:bg-green-100 text-green-600">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Mon Coin Pharma</h3>
+                    <p class="text-gray-400 mb-4">Votre pharmacie en ligne de confiance en Algérie, offrant des médicaments et produits de santé de qualité depuis 2015.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Liens rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="moncoin2.html" class="text-gray-400 hover:text-white">Accueil</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Produits</a></li>
+                        <li><a href="promotions.html" class="text-gray-400 hover:text-white">Promotions</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog Santé</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">À propos</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Catégories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Médicaments</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Soins de la Peau</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Santé & Bien-être</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Bébé & Enfant</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Premiers Secours</a></li>
+                        <li><a href="products.html" class="text-gray-400 hover:text-white">Matériel Médical</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contactez-nous</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Rue de la Santé, Alger, Algérie</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-green-500 mr-3"></i>
+                            <span class="text-gray-400">+213 123 456 789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-green-500 mr-3"></i>
+                            <span class="text-gray-400">contact@moncoinpharma.dz</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-green-500 mr-3"></i>
+                            <span class="text-gray-400">Lun-Sam: 8h-20h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Mon Coin Pharma. Tous droits réservés.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Conditions générales</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-20 right-6 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 hidden" aria-label="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>

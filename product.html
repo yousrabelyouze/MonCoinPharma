@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doliprane 1000mg - MON COIN PHARMA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js" defer></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .product-gallery-main {
+            transition: transform 0.3s ease;
+        }
+        .product-gallery-main:hover {
+            transform: scale(1.03);
+        }
+        .thumbnail:hover {
+            border-color: #38a169;
+        }
+        .prescription-upload:hover {
+            border-color: #38a169;
+            background-color: #f0fff4;
+        }
+        .add-to-cart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            .product-details-container {
+                flex-direction: column;
+            }
+            .product-gallery {
+                width: 100%;
+            }
+            .product-info {
+                width: 100%;
+                padding-left: 0;
+                margin-top: 2rem;
+            }
+                 body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .chatbot-toggle {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(56, 161, 105, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(56, 161, 105, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(56, 161, 105, 0);
+            }
+        }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+  <!-- Top Bar -->
+  <div class="bg-green-800 text-white py-2 px-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex space-x-4 text-sm">
+            <span><i class="fas fa-phone-alt mr-1"></i> +213 123 456 789</span>
+            <span><i class="fas fa-envelope mr-1"></i> contact@moncoinpharma.dz</span>
+        </div>
+        <div class="flex space-x-4">
+<a href="admin.html" class="text-sm hover:text-green-200"><i class="fas fa-user mr-1"></i> Mon Compte</a>
+            <a href="favoris.html" class="text-sm hover:text-green-200"><i class="fas fa-heart mr-1"></i> Favoris</a>
+            <div class="flex items-center">
+                <i class="fas fa-globe mr-1"></i>
+                <select class="bg-green-800 text-white border-none text-sm focus:ring-0" title="Sélectionner la langue">
+                    <option>Français</option>
+                    <option>العربية</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="flex items-center">
+            <div class="text-green-700 mr-4">
+                <i class="fas fa-bars text-2xl md:hidden"></i>
+            </div>
+            <a href="#" class="flex items-center">
+                <img src="assets/images/logo.png" alt="Mon Coin Pharma Logo" class="h-10 mr-2">
+                <span class="text-2xl font-bold text-green-700">Mon Coin Pharma</span>
+            </a>
+        </div>
+
+        <div class="hidden md:flex flex-1 mx-8">
+            <div class="relative w-full">
+                <input type="text" placeholder="Rechercher des médicaments, produits de soin..." 
+                       class="w-full py-2 px-4 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500">
+                <button class="absolute right-0 top-0 h-full px-4 text-white bg-green-600 rounded-r-full hover:bg-green-700" title="Rechercher">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <a href="#" class="hidden md:block text-gray-700 hover:text-green-600">
+                <i class="fas fa-user-circle text-2xl"></i>
+            </a>
+            <a href="#" class="text-gray-700 hover:text-green-600 relative">
+                <i class="fas fa-heart text-2xl"></i>
+                <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+            </a>
+            <a href="#" class="text-gray-700 hover:text-green-600 relative">
+                <i class="fas fa-shopping-cart text-2xl"></i>
+                <span class="absolute -top-2 -right-2 bg-green-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8" x-data="productPage()">
+        <!-- Breadcrumbs -->
+        <div class="text-sm text-gray-500 mb-6">
+    <a href="index.html" class="text-green-600 hover:underline">Accueil</a> / 
+<a href="Products.html" class="text-green-600 hover:underline">Médicaments</a> / 
+            <a href="#" class="text-green-600 hover:underline">Antidouleurs</a> / 
+            <span class="text-gray-700">Doliprane 1000mg</span>
+        </div>
+
+        <!-- Product Details -->
+        <div class="product-details-container flex flex-wrap">
+            <!-- Product Gallery -->
+            <div class="product-gallery w-full md:w-1/2">
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <div class="product-gallery-main mb-4 overflow-hidden rounded-lg">
+                        <img 
+                            :src="activeImage" 
+                            alt="Doliprane 1000mg - MON COIN PHARMA" 
+                            class="w-full h-auto cursor-zoom-in"
+                            @click="zoomImage()"
+                        >
+                    </div>
+                    <div class="thumbnail-carousel flex space-x-2 overflow-x-auto pb-2">
+                        <template x-for="(image, index) in product.images" :key="index">
+                            <div 
+                                class="thumbnail flex-shrink-0 w-20 h-20 border-2 rounded-md overflow-hidden cursor-pointer"
+                                :class="{'border-green-500': activeImageIndex === index, 'border-gray-200': activeImageIndex !== index}"
+                                @click="changeImage(index)"
+                            >
+                                <img :src="image.thumb" :alt="'Doliprane 1000mg - Miniature ' + (index + 1)" class="w-full h-full object-cover">
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info w-full md:w-1/2 md:pl-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <!-- Product Title & Category -->
+                    <div class="mb-4">
+                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mb-2">Médicaments</span>
+                        <h1 class="text-2xl font-bold text-gray-800" x-text="product.name"></h1>
+                        <div class="flex items-center mt-1">
+                            <span class="text-sm text-gray-500">Marque:</span>
+                            <span class="text-sm font-medium ml-1">Sanofi</span>
+                        </div>
+                    </div>
+
+                    <!-- Stock Status -->
+                    <div class="mb-4">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            <i class="fas fa-check-circle mr-1"></i>
+                            En stock
+                        </span>
+                        <span x-show="product.requires_prescription" class="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                            <i class="fas fa-prescription mr-1"></i>
+                            Ordonnance requise
+                        </span>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="mb-6">
+                        <div class="flex items-center">
+                            <span class="text-3xl font-bold text-green-600" x-text="formatPrice(product.price)"></span>
+                            <span class="text-sm text-gray-500 ml-1">DZD</span>
+                            <template x-if="product.discount">
+                                <div class="ml-4">
+                                    <span class="text-sm line-through text-gray-500" x-text="formatPrice(product.discount.original)"></span>
+                                    <span class="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                        <i class="fas fa-tag mr-1"></i>
+                                        <span x-text="product.discount.percent + '%'"></span>
+                                    </span>
+                                </div>
+                            </template>
+                        </div>
+                        <div class="text-sm text-green-600 mt-1">
+                            <i class="fas fa-bolt"></i> Économisez 200 DZD avec cette offre
+                        </div>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <div class="flex items-center text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
+                            <i class="fas fa-truck text-green-500 mr-1"></i> Livraison rapide
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
+                            <i class="fas fa-lock text-green-500 mr-1"></i> Paiement sécurisé
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
+                            <i class="fas fa-shield-alt text-green-500 mr-1"></i> Produit certifié
+                        </div>
+                    </div>
+
+                    <!-- Prescription Upload (Conditional) -->
+                    <div x-show="product.requires_prescription" class="mb-6">
+                        <h3 class="text-sm font-medium text-gray-700 mb-2">Télécharger votre ordonnance</h3>
+                        <div 
+                            class="prescription-upload mt-4 border-2 border-dashed border-green-200 p-4 rounded-lg text-center"
+                            @dragover.prevent="isDragging = true"
+                            @dragleave="isDragging = false"
+                            @drop.prevent="handleFileDrop($event)"
+                            :class="{'bg-green-50 border-green-400': isDragging}"
+                        >
+                            <input type="file" id="prescription" class="hidden" accept=".pdf,.jpg,.png" @change="handleFileUpload">
+                            <label for="prescription" class="cursor-pointer text-green-600">
+                                <i class="fas fa-file-upload text-3xl mb-2"></i>
+                                <div class="font-medium">Déposez votre ordonnance ici</div>
+                                <p class="text-sm text-gray-500 mt-1">Formats acceptés: PDF, JPG, PNG (max 5MB)</p>
+                            </label>
+                            <div x-show="prescriptionFile" class="mt-3">
+                                <div class="flex items-center justify-between bg-green-50 p-2 rounded">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-file text-green-500 mr-2"></i>
+                                        <span class="text-sm" x-text="prescriptionFile.name"></span>
+                                    </div>
+                                    <button @click="removePrescription" class="text-red-500 hover:text-red-700" title="Supprimer le fichier">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="text-green-600 text-sm mt-2">
+                                    <i class="fas fa-check-circle"></i> Ordonnance vérifiée ✅
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quantity Selector -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Quantité</label>
+                        <div class="flex items-center">
+                            <button 
+                                @click="decrementQuantity"
+                                class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded-l"
+                            >
+                                -
+                            </button>
+                            <input 
+                                type="number" 
+                                min="1" 
+                                x-model="quantity" 
+                                class="w-16 text-center border-t border-b border-gray-300 py-2"
+                                aria-label="Quantité"
+                            >
+                            <button 
+                                @click="incrementQuantity"
+                                class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded-r"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Add to Cart Buttons -->
+                    <div class="flex flex-col space-y-3">
+                        <button 
+                            @click="addToCart"
+                            class="add-to-cart-btn bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center transition-all"
+                        >
+                            <i class="fas fa-cart-plus mr-2"></i>
+                            Ajouter au panier
+                        </button>
+                        <button class="border-2 border-green-600 text-green-600 hover:bg-green-50 font-bold py-3 px-6 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-bolt mr-2"></i>
+                            Acheter maintenant
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Tabs -->
+        <div class="mt-8">
+            <div class="border-b border-gray-200">
+                <nav class="-mb-px flex space-x-8">
+                    <button 
+                        @click="activeTab = 'description'"
+                        :class="{'border-green-500 text-green-600': activeTab === 'description', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'description'}"
+                        class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                    >
+                        Description
+                    </button>
+                    <button 
+                        @click="activeTab = 'details'"
+                        :class="{'border-green-500 text-green-600': activeTab === 'details', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'details'}"
+                        class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                    >
+                        Détails techniques
+                    </button>
+                    <button 
+                        @click="activeTab = 'reviews'"
+                        :class="{'border-green-500 text-green-600': activeTab === 'reviews', 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300': activeTab !== 'reviews'}"
+                        class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                    >
+                        Avis (24)
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="bg-white shadow rounded-b-lg p-6">
+                <!-- Description Tab -->
+                <div x-show="activeTab === 'description'">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">À propos de ce produit</h3>
+                    <p class="text-gray-600 mb-4">
+                        Le Doliprane 1000mg est un antalgique (antidouleur) et antipyrétique (contre la fièvre) à base de paracétamol. 
+                        Il est indiqué dans le traitement symptomatique des douleurs d'intensité modérée à intense et/ou des états fébriles.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        <strong>Présentation:</strong> Boîte de 8 comprimés sécables de 1000mg.
+                    </p>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-exclamation-triangle text-yellow-400"></i>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm text-yellow-700">
+                                    <strong>Important:</strong> Consultez toujours un médecin avant utilisation. Ne pas dépasser la dose recommandée. 
+                                    En cas de surdosage, contactez immédiatement un centre antipoison ou un médecin.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Details Tab -->
+                <div x-show="activeTab === 'details'">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Informations techniques</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Composition</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>Paracétamol: 1000mg par comprimé</li>
+                                <li>Excipients: amidon de maïs, povidone, talc, etc.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Posologie</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>Adultes et enfants de plus de 50 kg: 1 comprimé toutes les 6 heures</li>
+                                <li>Maximum 4 comprimés par jour (4000mg)</li>
+                                <li>À prendre avec un verre d'eau</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Effets secondaires</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>Rare: réactions cutanées (démangeaisons, éruption)</li>
+                                <li>Exceptionnel: troubles sanguins, hépatite</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-700 mb-2">Contre-indications</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>Allergie au paracétamol</li>
+                                <li>Insuffisance hépatique sévère</li>
+                                <li>Enfants de moins de 15 ans (pour cette dose)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <h4 class="font-medium text-gray-700 mb-2">Certifications</h4>
+                        <div class="flex items-center">
+                            <img src="https://via.placeholder.com/80x40?text=Ministère+Santé" alt="Certification Ministère de la Santé Algérien" class="h-10 mr-4">
+                            <span class="text-sm text-gray-600">Produit certifié par le Ministère de la Santé Algérien</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div x-show="activeTab === 'reviews'">
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900">Avis clients</h3>
+                            <div class="flex items-center mt-1">
+                                <div class="flex">
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                </div>
+                                <span class="ml-2 text-sm text-gray-600">4.4 sur 5 (24 avis)</span>
+                            </div>
+                        </div>
+                        <button 
+                            @click="openReviewModal"
+                            class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg"
+                        >
+                            <i class="fas fa-pen mr-2"></i> Écrire un avis
+                        </button>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Review 1 -->
+                        <div class="review-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <div class="flex items-center">
+                                        <div class="flex">
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                        </div>
+                                        <span class="ml-2 text-sm font-medium text-gray-900">Karim B.</span>
+                                    </div>
+                                    <div class="mt-1 text-sm text-gray-500">
+                                        <time datetime="2023-05-16">16 mai 2023</time>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-700">
+                                        <p>
+                                            Très efficace contre les maux de tête. J'en prends depuis des années et ça marche toujours aussi bien. 
+                                            Le prix est raisonnable comparé à d'autres pharmacies.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="review-card bg-white border border-gray-200 rounded-lg p-6 shadow-sm transition-all">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <div class="flex items-center">
+                                        <div class="flex">
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="fas fa-star text-yellow-400"></i>
+                                            <i class="far fa-star text-yellow-400"></i>
+                                        </div>
+                                        <span class="ml-2 text-sm font-medium text-gray-900">Nadia T.</span>
+                                    </div>
+                                    <div class="mt-1 text-sm text-gray-500">
+                                        <time datetime="2023-04-22">22 avril 2023</time>
+                                    </div>
+                                    <div class="mt-2 text-sm text-gray-700">
+                                        <p>
+                                            Bon produit, mais attention à ne pas en abuser. J'ai eu une livraison rapide et bien emballée. 
+                                            Le seul bémol est que la boîte est un peu grande pour le nombre de comprimés.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="mt-6 w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-4 rounded-lg">
+                        Voir plus d'avis
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Products -->
+        <div class="mt-12">
+            <h2 class="text-xl font-bold text-gray-800 mb-6">Produits similaires</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="assets/images/produit3.jpg" alt="Doliprane 500mg" class="w-full h-48 object-contain">
+                        <div class="absolute top-2 right-2 bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">
+                            -15%
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium text-gray-900 mb-1">Doliprane 500mg</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+                            </div>
+                            <span class="ml-1 text-xs text-gray-500">(42)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-lg font-bold text-green-600">850 DZD</span>
+                            <span class="ml-2 text-sm line-through text-gray-500">1000 DZD</span>
+                        </div>
+                        <button class="mt-3 w-full bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-4 rounded">
+                            <i class="fas fa-cart-plus mr-1"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="assets/images/produit2.jpeg" alt="Efferalgan 1000mg" class="w-full h-48 object-contain">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium text-gray-900 mb-1">Efferalgan 1000mg</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="far fa-star text-yellow-400 text-xs"></i>
+                            </div>
+                            <span class="ml-1 text-xs text-gray-500">(18)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-lg font-bold text-green-600">1100 DZD</span>
+                        </div>
+                        <button class="mt-3 w-full bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-4 rounded">
+                            <i class="fas fa-cart-plus mr-1"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="assets/images/produit4.jpg" alt="Advil 400mg" class="w-full h-48 object-contain">
+                        <div class="absolute top-2 right-2 bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">
+                            -20%
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium text-gray-900 mb-1">Advil 400mg</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                            </div>
+                            <span class="ml-1 text-xs text-gray-500">(56)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-lg font-bold text-green-600">1200 DZD</span>
+                            <span class="ml-2 text-sm line-through text-gray-500">1500 DZD</span>
+                        </div>
+                        <button class="mt-3 w-full bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-4 rounded">
+                            <i class="fas fa-cart-plus mr-1"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="relative">
+                        <img src="assets/images/produit5.jpg" alt="Spasfon" class="w-full h-48 object-contain">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium text-gray-900 mb-1">Spasfon</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star text-yellow-400 text-xs"></i>
+                                <i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>
+                            </div>
+                            <span class="ml-1 text-xs text-gray-500">(37)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="text-lg font-bold text-green-600">900 DZD</span>
+                        </div>
+                        <button class="mt-3 w-full bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-4 rounded">
+                            <i class="fas fa-cart-plus mr-1"></i> Ajouter
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Review Modal -->
+        <div 
+            x-show="reviewModalOpen" 
+            class="fixed inset-0 overflow-y-auto z-50" 
+            aria-labelledby="modal-title" 
+            role="dialog" 
+            aria-modal="true"
+        >
+            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                <div 
+                    @click="reviewModalOpen = false"
+                    x-show="reviewModalOpen"
+                    x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" 
+                    aria-hidden="true"
+                ></div>
+
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+                <div 
+                    x-show="reviewModalOpen"
+                    x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+                >
+                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                        <div class="sm:flex sm:items-start">
+                            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                    Écrire un avis
+                                </h3>
+                                <div class="mt-4">
+                                    <div class="mb-4">
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Note</label>
+                                        <div class="flex space-x-1">
+                                            <button 
+                                                @click="reviewRating = 1"
+                                                class="text-2xl"
+                                                :class="{'text-yellow-400': reviewRating >= 1, 'text-gray-300': reviewRating < 1}"
+                                                title="Donner 1 étoile"
+                                            >
+                                                <i class="fas fa-star"></i>
+                                            </button>
+                                            <button 
+                                                @click="reviewRating = 2"
+                                                class="text-2xl"
+                                                :class="{'text-yellow-400': reviewRating >= 2, 'text-gray-300': reviewRating < 2}"
+                                                title="Donner 2 étoiles"
+                                            >
+                                                <i class="fas fa-star"></i>
+                                            </button>
+                                            <button 
+                                                @click="reviewRating = 3"
+                                                class="text-2xl"
+                                                :class="{'text-yellow-400': reviewRating >= 3, 'text-gray-300': reviewRating < 3}"
+                                                title="Donner 3 étoiles"
+                                            >
+                                                <i class="fas fa-star"></i>
+                                            </button>
+                                            <button 
+                                                @click="reviewRating = 4"
+                                                class="text-2xl"
+                                                :class="{'text-yellow-400': reviewRating >= 4, 'text-gray-300': reviewRating < 4}"
+                                                title="Donner 4 étoiles"
+                                            >
+                                                <i class="fas fa-star"></i>
+                                            </button>
+                                            <button 
+                                                @click="reviewRating = 5"
+                                                class="text-2xl"
+                                                :class="{'text-yellow-400': reviewRating >= 5, 'text-gray-300': reviewRating < 5}"
+                                                title="Donner 5 étoiles"
+                                            >
+                                                <i class="fas fa-star"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="review-title" class="block text-sm font-medium text-gray-700 mb-1">Titre</label>
+                                        <input 
+                                            type="text" 
+                                            id="review-title" 
+                                            x-model="reviewTitle"
+                                            class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border"
+                                            placeholder="Donnez un titre à votre avis"
+                                        >
+                                    </div>
+                                    <div>
+                                        <label for="review-content" class="block text-sm font-medium text-gray-700 mb-1">Votre avis</label>
+                                        <textarea 
+                                            id="review-content" 
+                                            x-model="reviewContent"
+                                            rows="4" 
+                                            class="shadow-sm focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border"
+                                            placeholder="Décrivez votre expérience avec ce produit..."
+                                        ></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                        <button 
+                            type="button" 
+                            @click="submitReview"
+                            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"
+                        >
+                            Envoyer l'avis
+                        </button>
+                        <button 
+                            type="button" 
+                            @click="reviewModalOpen = false"
+                            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                        >
+                            Annuler
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+   
+    <!-- Newsletter -->
+    <section class="py-12 bg-green-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Abonnez-vous à notre newsletter</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Recevez des offres exclusives, des conseils santé et les dernières nouveautés directement dans votre boîte email.</p>
+            
+            <div class="flex flex-col md:flex-row max-w-xl mx-auto">
+                <input type="email" placeholder="Votre adresse email" 
+                       class="flex-grow py-3 px-4 rounded-l-full md:rounded-r-none rounded-r-full mb-2 md:mb-0 focus:outline-none text-gray-800">
+                <button class="bg-green-800 hover:bg-green-900 py-3 px-6 rounded-r-full md:rounded-l-none rounded-l-full font-bold transition duration-300">
+                    S'abonner
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Mon Coin Pharma</h3>
+                    <p class="text-gray-400 mb-4">Votre pharmacie en ligne de confiance en Algérie, offrant des médicaments et produits de santé de qualité depuis 2015.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Liens rapides</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Accueil</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Produits</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Promotions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog Santé</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">À propos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Categories -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Catégories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Médicaments</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Soins de la Peau</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Santé & Bien-être</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Bébé & Enfant</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Premiers Secours</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Matériel Médical</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contactez-nous</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Rue de la Santé, Alger, Algérie</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-green-500 mr-3"></i>
+                            <span class="text-gray-400">+213 123 456 789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-green-500 mr-3"></i>
+                            <span class="text-gray-400">contact@moncoinpharma.dz</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock text-green-500 mr-3"></i>
+                            <span class="text-gray-400">Lun-Sam: 8h-20h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Mon Coin Pharma. Tous droits réservés.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Conditions générales</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Politique de confidentialité</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <div id="chatbot-container" class="hidden bg-white rounded-t-xl shadow-xl w-80 h-96 flex flex-col">
+            <div class="bg-green-600 text-white p-3 rounded-t-xl flex justify-between items-center">
+                <h3 class="font-bold">Assistance Mon Coin Pharma</h3>
+                <button id="close-chat" class="text-white hover:text-gray-200" title="Fermer le chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto text-sm">
+                <div class="mb-4">
+                    <div class="bg-green-100 text-gray-800 rounded-lg p-3 inline-block max-w-xs">
+                        Bonjour ! Je suis l'assistant virtuel de Mon Coin Pharma. Comment puis-je vous aider aujourd'hui ?
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 border-t">
+                <div class="flex">
+                    <input type="text" placeholder="Tapez votre message..." 
+                           class="flex-grow py-2 px-3 border rounded-l focus:outline-none focus:ring-1 focus:ring-green-500 text-sm">
+                    <button class="bg-green-600 text-white px-4 rounded-r hover:bg-green-700" title="Envoyer le message">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="mt-2 text-xs text-gray-500">
+                    En continuant, vous acceptez notre <a href="#" class="text-green-600">politique de confidentialité</a>.
+                </div>
+            </div>
+        </div>
+        <button id="chatbot-toggle" class="chatbot-toggle bg-green-600 text-white rounded-full p-4 shadow-lg hover:bg-green-700 transition duration-300" title="Ouvrir le chat">
+            <i class="fas fa-comment-medical text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-20 right-6 bg-green-600 text-white rounded-full p-3 shadow-md hover:bg-green-700 hidden" title="Retour en haut">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Chatbot toggle
+        const chatbotToggle = document.getElementById('chatbot-toggle');
+        const chatbotContainer = document.getElementById('chatbot-container');
+        const closeChat = document.getElementById('close-chat');
+
+        chatbotToggle.addEventListener('click', () => {
+            chatbotContainer.classList.toggle('hidden');
+        });
+
+        closeChat.addEventListener('click', () => {
+            chatbotContainer.classList.add('hidden');
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Simple chatbot interaction
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.querySelector('#chatbot-container input[type="text"]');
+        const chatSend = document.querySelector('#chatbot-container button');
+
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                // Add user message
+                const userDiv = document.createElement('div');
+                userDiv.className = 'mb-4 flex justify-end';
+                userDiv.innerHTML = `
+                    <div class="bg-green-600 text-white rounded-lg p-3 inline-block max-w-xs">
+                        ${message}
+                    </div>
+                `;
+                chatMessages.appendChild(userDiv);
+                
+                // Clear input
+                chatInput.value = '';
+                
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                // Add bot response after a short delay
+                setTimeout(() => {
+                    const responses = [
+                        "Je comprends votre demande. Un de nos pharmaciens vous répondra sous peu.",
+                        "Pour les médicaments sur ordonnance, veuillez télécharger votre prescription dans la section dédiée.",
+                        "Nos délais de livraison sont de 24h à Alger et 48h dans les autres wilayas.",
+                        "Vous pouvez suivre votre commande dans votre espace client ou via le lien reçu par email.",
+                        "Pour toute question urgente, vous pouvez nous appeler au +213 123 456 789."
+                    ];
+                    
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    
+                    const botDiv = document.createElement('div');
+                    botDiv.className = 'mb-4';
+                    botDiv.innerHTML = `
+                        <div class="bg-green-100 text-gray-800 rounded-lg p-3 inline-block max-w-xs">
+                            ${randomResponse}
+                        </div>
+                    `;
+                    chatMessages.appendChild(botDiv);
+                    
+                    // Scroll to bottom
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1000);
+            }
+        }
+    </script>
+
+    <!-- Chatbot -->
+    <div class="fixed bottom-6 right-6">
+        <button class="bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:bg-green-700 transition-colors" title="Ouvrir le chat">
+            <i class="fas fa-comment-dots text-xl"></i>
+        </button>
+    </div>
+
+    <script>
+        function productPage() {
+            return {
+                product: {
+                    name: "Doliprane 1000mg",
+                    category: "Médicaments",
+                    requires_prescription: false,
+                    price: 1200,
+                    discount: { original: 1400, percent: 15 },
+                    details: {
+                        dosage: "1 comprimé toutes les 6 heures",
+                        side_effects: "Rare: démangeaisons, éruption cutanée"
+                    },
+                    images: [
+                        { main: "assets/images/produit1.jpg", thumb: "assets/images/produit1.jpg" }
+                    ]
+                },
+                activeImageIndex: 0,
+                activeImage: "assets/images/produit1.jpg",
+                quantity: 1,
+                isDragging: false,
+                prescriptionFile: null,
+                activeTab: 'description',
+                reviewModalOpen: false,
+                reviewRating: 0,
+                reviewTitle: '',
+                reviewContent: '',
+                
+                // Methods
+                changeImage(index) {
+                    this.activeImageIndex = index;
+                    this.activeImage = this.product.images[index].main;
+                },
+                zoomImage() {
+                    // In a real implementation, this would open a modal with a zoomed image
+                    console.log("Zooming image");
+                },
+                incrementQuantity() {
+                    this.quantity++;
+                },
+                decrementQuantity() {
+                    if (this.quantity > 1) {
+                        this.quantity--;
+                    }
+                },
+                handleFileUpload(event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        this.validateAndSetPrescription(file);
+                    }
+                },
+                handleFileDrop(event) {
+                    this.isDragging = false;
+                    const file = event.dataTransfer.files[0];
+                    if (file) {
+                        this.validateAndSetPrescription(file);
+                    }
+                },
+                validateAndSetPrescription(file) {
+                    // Check file type
+                    const validTypes = ['application/pdf', 'image/jpeg', 'image/png'];
+                    if (!validTypes.includes(file.type)) {
+                        alert('Format de fichier non supporté. Veuillez uploader un PDF, JPG ou PNG.');
+                        return;
+                    }
+                    
+                    // Check file size (5MB max)
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert('Le fichier est trop volumineux. Taille maximale: 5MB.');
+                        return;
+                    }
+                    
+                    this.prescriptionFile = file;
+                },
+                removePrescription() {
+                    this.prescriptionFile = null;
+                },
+                addToCart() {
+                    if (this.product.requires_prescription && !this.prescriptionFile) {
+                        alert('Veuillez uploader votre ordonnance pour ce produit.');
+                        return;
+                    }
+                    
+                    // In a real implementation, this would add to cart via API
+                    console.log(`Added ${this.quantity} ${this.product.name} to cart`);
+                    alert(`${this.quantity} ${this.product.name} ajouté au panier`);
+                },
+                formatPrice(price) {
+                    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                },
+                openReviewModal() {
+                    this.reviewModalOpen = true;
+                },
+                submitReview() {
+                    if (this.reviewRating === 0 || !this.reviewTitle || !this.reviewContent) {
+                        alert('Veuillez compléter tous les champs et donner une note.');
+                        return;
+                    }
+                    
+                    // In a real implementation, this would submit to backend
+                    console.log('Review submitted:', {
+                        rating: this.reviewRating,
+                        title: this.reviewTitle,
+                        content: this.reviewContent
+                    });
+                    
+                    alert('Merci pour votre avis! Il sera publié après modération.');
+                    this.reviewModalOpen = false;
+                    this.reviewRating = 0;
+                    this.reviewTitle = '';
+                    this.reviewContent = '';
+                }
+            }
+        }
+    </script>
+
+    <!-- Schema.org markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Doliprane 1000mg",
+      "image": "https://via.placeholder.com/600x600?text=Doliprane+1000mg",
+      "description": "Antalgique et antipyrétique à base de paracétamol. Indiqué dans le traitement symptomatique des douleurs d'intensité modérée à intense et/ou des états fébriles.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Sanofi"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.moncoinpharma.dz/doliprane-1000mg",
+        "priceCurrency": "DZD",
+        "price": "1200",
+        "priceValidUntil": "2023-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "24"
+      }
+    }
+    </script>
+</body>
+</html>
